@@ -1,81 +1,88 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:kisukari_mobile_app/src/splashscreen/splashscreen.dart';
+import 'package:kisukari_mobile_app/constants/routes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() {
+void main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-       
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+  State<MyApp> createState() => _MyAppState();
+
+  /* static void setLocale(BuildContext context, Locale locale) {} */
+}
+/* 
+  void setLocale(BuildContext context, Locale newLocale) {
+    _MyAppState? state = context.findAncestorStateOfType<_MyAppState>();
+    state?.setLocale(newLocale);
   }
-}
+ */
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class _MyAppState extends State<MyApp> {
+  //setting app localization
+ /*  Locale? _locale;
 
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
+  setLocale(Locale locale) {
     setState(() {
-     
-      _counter++;
+      _locale = locale;
     });
   }
+ */
 
-  @override
+  // initializing app loader func
+  Future<void> _initApp() async {
+    await Future.delayed(const Duration(seconds: 3));
+  }
+
+   
+  // This widget is the root of your application.
+  @override 
   Widget build(BuildContext context) {
-    
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+
+      // language localizations
+      localizationsDelegates: AppLocalizations.localizationsDelegates, 
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: /* _locale */ const Locale('sw', ''),
+      // this loads the app first before opening the splash screen
+      home: FutureBuilder(
+        future: _initApp(), 
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const InitialLoader(); // initial loader
+          } else {
+            return const SplashScreen(); // splash screen
+          }
+        }
       ),
-      body: Center(
-        
-        child: Column(
-          
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      routes: Routes.getRoutes(),
     );
   }
 }
+
+
+// Initial loader to initialize app
+
+class InitialLoader extends StatelessWidget {
+  const InitialLoader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: CircularProgressIndicator()
+      )
+    );
+  }
+}
+
+
+
+
