@@ -43,7 +43,22 @@ class Kicons {
   static String resultsgraphIconIntro = 'assets/app_icons/resultsgraphimage.png';
   static String noalcoholIconIntro = 'assets/app_icons/noalcohol.png';
   static String nosmokingIconIntro = 'assets/app_icons/nosmoking.png';
+  static String glucometerIcon = 'assets/app_icons/glucometer.png';
+  static String communityBlackIcon = 'assets/app_icons/communityIconBlack.png';
+  static String communityRedIcon = 'assets/app_icons/communityIconRed.png';
+  static String syringeIcon = 'assets/app_icons/syringe.png';
+  static String doublepillsIcon = 'assets/app_icons/doublepills.png';
+  static String foodutensilsIcon = 'assets/app_icons/foodutensils.png';
+  static String customerserviceIcon = 'assets/app_icons/customerserviceicon.png';
+  static String overweightIcon = 'assets/app_icons/overweight.png';
+  static String premiumIcon = 'assets/app_icons/premiumicon.png';
+  static String heartbeatIcon = 'assets/app_icons/heartbeaticon.png';
+  static String fastingIcon = 'assets/app_icons/fastingicon.png';
+  static String reportweightIcon = 'assets/app_icons/reportweighticon.png';
+  static String reportwaterinsulinIcon = 'assets/app_icons/waterinsulin.png';
+  static String reportmilkinsulinIcon = 'assets/app_icons/milkinsulin.png';
+  static String onepillIcon = 'assets/app_icons/onepillicon.png';
    
-    
-  
+   
+   
 }

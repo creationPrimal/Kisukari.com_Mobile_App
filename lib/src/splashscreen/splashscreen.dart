@@ -117,6 +117,20 @@ class _SplashScreenState extends State<SplashScreen> {
                   )
                 ],
               ),
+            ),
+            Positioned(
+              bottom: 0,
+              child:
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                      mainentrypoint,
+                      (Route<dynamic> route) => false
+                    );
+                  },
+                  child: 
+                    const Text('Skip')
+                )
             )
           ],
         )

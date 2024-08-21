@@ -63,7 +63,7 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
       GridViewItems(name: AppLocalizations.of(context)!.kidneyDiseases, imagePath: Kicons.kidneyIconIntro, bg: Kcolors.lightGrey, titlecolor: Kcolors.darkBlue, isSelected: false),
       GridViewItems(name: AppLocalizations.of(context)!.hivDisease, imagePath: Kicons.hivIconIntro, bg: Kcolors.lightGrey, titlecolor: Kcolors.darkBlue, isSelected: false),
       GridViewItems(name: AppLocalizations.of(context)!.tbDisease, imagePath: Kicons.tbIconIntro, bg: Kcolors.lightGrey, titlecolor: Kcolors.darkBlue, isSelected: false),
-      GridViewItems(name: AppLocalizations.of(context)!.heavyweightDisease, imagePath: Kicons.bpIconIntro, bg: Kcolors.lightGrey, titlecolor: Kcolors.darkBlue, isSelected: false),
+      GridViewItems(name: AppLocalizations.of(context)!.heavyweightDisease, imagePath: Kicons.overweightIcon, bg: Kcolors.lightGrey, titlecolor: Kcolors.darkBlue, isSelected: false),
     ];
 
     

@@ -7,6 +7,7 @@ import 'package:kisukari_mobile_app/constants/backbutton.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:kisukari_mobile_app/src/introduction/resultsscreen/widgets/calculatingloader.dart';
 import 'package:kisukari_mobile_app/src/introduction/resultsscreen/widgets/sugarlevelresult.dart';
 
@@ -109,7 +110,7 @@ class _IntroResultsState extends State<IntroResults> {
                   child: GestureDetector(
                   onTap: () {
                   
-                    /* Navigator.pushNamed(context, resultsintrodialog); */
+                    Navigator.of(context).pushNamedAndRemoveUntil(mainentrypoint, (Route<dynamic> route) => false);
                   },
                   child: Container(
                     height: 50,

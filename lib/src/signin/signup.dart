@@ -24,6 +24,7 @@ class _SignUpState extends State<SignUp> {
   String _errorMessage = '';
 
 
+  // ignore: unused_element
   void _validateInputs() {
     final form = _formKey.currentState;
     if (form!.validate()) {

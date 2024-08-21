@@ -37,51 +37,61 @@ class FourthOtherdiseases extends StatelessWidget {
           )
       ),
       body: 
-      SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-          margin: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-          
-              // yes or no qstn
-              const Otherdiseasesqstn(),
-              // alcohol and cigarette
-              
-
-              Container(
-                width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.only(top: 20, bottom: 30),
-                  child: GestureDetector(
-                  onTap: () {
+      LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: IntrinsicHeight(
+                child: Container(
+                  margin: const EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
                   
-                    Navigator.pushNamed(context, resultsintrodialog);
-                  },
-                  child: Container(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width * 0.85,
-                    margin: const EdgeInsets.only(top: 5),
-                    decoration: BoxDecoration(
-                      color: Kcolors.mainRed,
-                      borderRadius: BorderRadius.circular(50)
-                    ),
-                    child: Center(
-                      child: Text(AppLocalizations.of(context)!.continueNext,
-                      textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Kcolors.mainWhite
-                        )
-                      ),
-                    )
+                      // yes or no qstn
+                      const Otherdiseasesqstn(),
+                      // alcohol and cigarette
+                      
+                          
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        margin: const EdgeInsets.only(top: 20, bottom: 30),
+                          child: GestureDetector(
+                          onTap: () {
+                          
+                            Navigator.pushNamed(context, resultsintrodialog);
+                          },
+                          child: Container(
+                            height: 50,
+                            width: MediaQuery.of(context).size.width * 0.85,
+                            margin: const EdgeInsets.only(top: 5),
+                            decoration: BoxDecoration(
+                              color: Kcolors.mainRed,
+                              borderRadius: BorderRadius.circular(50)
+                            ),
+                            child: Center(
+                              child: Text(AppLocalizations.of(context)!.continueNext,
+                              textAlign: TextAlign.center,
+                                style: GoogleFonts.roboto(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Kcolors.mainWhite
+                                )
+                              ),
+                            )
+                          ),
+                                                            ),
+                        ),
+                  
+                    ]
                   ),
-                                                    ),
                 ),
-          
-            ]
-          ),
-        )
+              ),
+            )
+          );
+        }
       )
     );
   }

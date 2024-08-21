@@ -42,18 +42,23 @@ dependencies:
   country_code_picker: ^3.0.0
   otp_text_field: ^1.1.3
   scroll_date_picker: ^3.8.0
+  font_awesome_flutter: ^10.7.0
+  badges: ^3.1.2
+  percent_indicator: ^4.2.3
+  table_calendar: ^3.1.2
+  fl_chart: ^0.68.0
+  syncfusion_flutter_datagrid: ^26.2.9
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_dotenv: ^5.0.2
-  provider: ^6.1.2
   flutter_image_slideshow: ^0.1.6
   cached_network_image: ^3.3.1
   get_time_ago: ^1.3.1
   flutter_local_notifications: ^17.2.1+2
   ionicons: ^0.2.2
-  badges: ^3.1.2
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -109,6 +114,21 @@ flutter:
     - assets/app_icons/resultsgraphimage.png
     - assets/app_icons/noalcohol.png
     - assets/app_icons/nosmoking.png
+    - assets/app_icons/glucometer.png
+    - assets/app_icons/communityIconBlack.png
+    - assets/app_icons/communityIconRed.png
+    - assets/app_icons/syringe.png
+    - assets/app_icons/doublepills.png
+    - assets/app_icons/foodutensils.png
+    - assets/app_icons/overweight.png
+    - assets/app_icons/customerserviceicon.png
+    - assets/app_icons/premiumicon.png
+    - assets/app_icons/heartbeaticon.png
+    - assets/app_icons/fastingicon.png
+    - assets/app_icons/reportweighticon.png
+    - assets/app_icons/waterinsulin.png
+    - assets/app_icons/milkinsulin.png
+    - assets/app_icons/onepillicon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

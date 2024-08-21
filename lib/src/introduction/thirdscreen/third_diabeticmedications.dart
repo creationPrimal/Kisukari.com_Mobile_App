@@ -36,52 +36,73 @@ class ThirdDiabeticmedications extends StatelessWidget {
           )
       ),
       body: 
-      SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-          margin: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-          
-              // medical option choices
-              const MedicationOptions(),
+      LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: constraints.maxHeight,
+              ),
+              child: IntrinsicHeight(
+                child: Container(
+                  margin: const EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
 
-              // alcohol and cigarette
-              const Alcoholandcigarette(),
-
-              Container(
-                width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.only(top: 20, bottom: 30),
-                  child: GestureDetector(
-                  onTap: () {
-                  
-                    Navigator.pushNamed(context, fourthintrodialog);
-                  },
-                  child: Container(
-                    height: 50,
-                    width: MediaQuery.of(context).size.width * 0.85,
-                    margin: const EdgeInsets.only(top: 5),
-                    decoration: BoxDecoration(
-                      color: Kcolors.mainRed,
-                      borderRadius: BorderRadius.circular(50)
-                    ),
-                    child: Center(
-                      child: Text(AppLocalizations.of(context)!.continueNext,
-                      textAlign: TextAlign.center,
-                        style: GoogleFonts.roboto(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Kcolors.mainWhite
-                        )
+                      //body
+                      const Column(
+                        children: [
+                      
+                          // medical option choices
+                          MedicationOptions(),
+                              
+                          // alcohol and cigarette
+                          Alcoholandcigarette(),
+                              
+                         
+                      
+                        ]
                       ),
-                    )
+
+                      // below button
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        margin: const EdgeInsets.only(top: 20, bottom: 30),
+                          child: GestureDetector(
+                          onTap: () {
+                          
+                            Navigator.pushNamed(context, fourthintrodialog);
+                          },
+                          child: Container(
+                            height: 50,
+                            width: MediaQuery.of(context).size.width * 0.85,
+                            margin: const EdgeInsets.only(top: 5),
+                            decoration: BoxDecoration(
+                              color: Kcolors.mainRed,
+                              borderRadius: BorderRadius.circular(50)
+                            ),
+                            child: Center(
+                              child: Text(AppLocalizations.of(context)!.continueNext,
+                              textAlign: TextAlign.center,
+                                style: GoogleFonts.roboto(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Kcolors.mainWhite
+                                )
+                              ),
+                            )
+                          ),
+                                                            ),
+                        ),
+                    ],
                   ),
-                                                    ),
                 ),
-          
-            ]
-          ),
-        )
+              ),
+            )
+          );
+        }
       )
     );
   }

@@ -554,7 +554,7 @@ class _SugarlevelresultState extends State<Sugarlevelresult> {
                                         text: AppLocalizations.of(context)!.resultsFoodCalorie1,
                                         style: GoogleFonts.roboto(
                                           color: Kcolors.mainBlack,
-                                          fontSize: 15,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold
                                         )
                                       ),
@@ -562,7 +562,7 @@ class _SugarlevelresultState extends State<Sugarlevelresult> {
                                         text: ' 5230 ',
                                         style: GoogleFonts.roboto(
                                           color: Kcolors.mainBlack,
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           fontWeight: FontWeight.bold
                                         )
                                       ),
@@ -570,7 +570,7 @@ class _SugarlevelresultState extends State<Sugarlevelresult> {
                                         text: AppLocalizations.of(context)!.resultsFoodCalorie2,
                                         style: GoogleFonts.roboto(
                                           color: Kcolors.mainBlack,
-                                          fontSize: 15,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold
                                         )
                                       )
@@ -623,7 +623,7 @@ class _SugarlevelresultState extends State<Sugarlevelresult> {
                                         text: AppLocalizations.of(context)!.resultsExcerciseCalorie1,
                                         style: GoogleFonts.roboto(
                                           color: Kcolors.mainBlack,
-                                          fontSize: 15,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold
                                         )
                                       ),
@@ -631,7 +631,7 @@ class _SugarlevelresultState extends State<Sugarlevelresult> {
                                         text: ' 4391 ',
                                         style: GoogleFonts.roboto(
                                           color: Kcolors.mainBlack,
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           fontWeight: FontWeight.bold
                                         )
                                       ),
@@ -639,7 +639,7 @@ class _SugarlevelresultState extends State<Sugarlevelresult> {
                                         text: AppLocalizations.of(context)!.resultsExcerciseCalorie2,
                                         style: GoogleFonts.roboto(
                                           color: Kcolors.mainBlack,
-                                          fontSize: 15,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold
                                         )
                                       )
