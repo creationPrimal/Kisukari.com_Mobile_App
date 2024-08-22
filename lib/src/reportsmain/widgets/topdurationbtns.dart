@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:kisukari_mobile_app/providers/reportduration.dart';
 import 'package:provider/provider.dart';
 
@@ -45,10 +46,14 @@ class _DurationBtnsState extends State<DurationBtns> {
         }
         durationlistbtns[index].isActive = true;
         provider.updateData(true);
+
+        if (durationlistbtns[3].isActive) {
+          Navigator.pushNamed(context, customizereport); // if custom then redirect to custimize the report
+        }
        
     });
   }
-  
+
 
   @override
   Widget build(BuildContext context) {

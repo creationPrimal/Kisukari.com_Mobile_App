@@ -186,6 +186,7 @@ class _InsulinTableState extends State<InsulinTable> {
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
                                 tableitemcontentsLocal[index].date,
+                                overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,
@@ -208,6 +209,7 @@ class _InsulinTableState extends State<InsulinTable> {
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
                                 tableitemcontentsLocal[index].time,
+                                overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,
@@ -300,19 +302,15 @@ class _InsulinTableState extends State<InsulinTable> {
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '${tableitemcontentsLocal[index].ofwater + tableitemcontentsLocal[index].ofmilk}',
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainBlack,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w600,
-                                    )
-                                    ),
-                                ],
-                              ),
+                              child: Text(
+                                '${tableitemcontentsLocal[index].ofwater + tableitemcontentsLocal[index].ofmilk}',
+                                overflow: TextOverflow.ellipsis,
+                                style: GoogleFonts.roboto(
+                                  color: Kcolors.mainBlack,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                )
+                                ),
                             ),
                           ),
                         ),

@@ -6,10 +6,14 @@ import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:kisukari_mobile_app/src/reportsmain/reports/bloodpressure_report/bpmainreport.dart';
+import 'package:kisukari_mobile_app/src/reportsmain/reports/clinic_report/clinicmainreport.dart';
 import 'package:kisukari_mobile_app/src/reportsmain/reports/excercise_report/excercisemainreport.dart';
+import 'package:kisukari_mobile_app/src/reportsmain/reports/fasting_report/fastingmainreport.dart';
+import 'package:kisukari_mobile_app/src/reportsmain/reports/food_report/foodmainreport.dart';
 import 'package:kisukari_mobile_app/src/reportsmain/reports/glucose_report/glucosemainreport.dart';
 import 'package:kisukari_mobile_app/src/reportsmain/reports/insulin_report/insulinmainreport.dart';
 import 'package:kisukari_mobile_app/src/reportsmain/reports/medicine_report/medicinemainreport.dart';
+import 'package:kisukari_mobile_app/src/reportsmain/reports/weight_report/weightmainreport.dart';
 
 class ReportTypeBtns extends StatefulWidget {
   const ReportTypeBtns({super.key});
@@ -175,6 +179,22 @@ class _ReportTypeBtnsState extends State<ReportTypeBtns> {
           //display excercise report
           if (btnlistitems[4].isActive)
             const ExcerciseMainReport(),
+
+          //display food report
+          if (btnlistitems[5].isActive)
+            const FoodMainReport(),
+
+          //display fasting report
+          if (btnlistitems[6].isActive)
+            const FastingMainReport(),
+
+          //display weight report
+          if (btnlistitems[7].isActive)
+            const WeightMainReport(),
+
+          //display clinic report
+          if (btnlistitems[8].isActive)
+            const ClinicMainReport(),
             
 
         ],

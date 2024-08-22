@@ -5,32 +5,29 @@
 
 
 
-
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:kisukari_mobile_app/src/reportsmain/reports/excercise_report/models/excercisetablemodel.dart';
+import 'package:kisukari_mobile_app/src/reportsmain/reports/fasting_report/models/fastingmodelitems.dart';
 
-class ExcerciseTable extends StatefulWidget {
-  const ExcerciseTable({super.key});
+class FastingTable extends StatefulWidget {
+  const FastingTable({super.key});
 
   @override
-  State<ExcerciseTable> createState() => _ExcerciseTableState();
+  State<FastingTable> createState() => _FastingTableState();
 }
 
-class _ExcerciseTableState extends State<ExcerciseTable> {
+class _FastingTableState extends State<FastingTable> {
 
-  late List<ExcerciseTableItems> tableitemcontentsLocal;
+  late List<FastingTableItems> tableitemcontentsLocal;
 
 
 
   @override
-  void didChangeDependencies() {
+  void initState() {
     tableListItems();
-    super.didChangeDependencies();
+    super.initState();
   }
 
   void tableListItems() {
@@ -43,18 +40,17 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
 
     return Container(
        width: MediaQuery.of(context).size.width,
-       margin: const EdgeInsets.only(top: 25, bottom: 10),
+       margin: const EdgeInsets.only(top: 10, bottom: 10),
        child:   
            Column(
              children: [
               // Title table row
               Table(
                 columnWidths: const {
-                  0: FixedColumnWidth(95.0),
-                  1: FixedColumnWidth(65.0),
-                  2: FlexColumnWidth(),
-                  3: FixedColumnWidth(75.0),
-                  4: FixedColumnWidth(70),
+                  0: FixedColumnWidth(100),
+                  1: FixedColumnWidth(95),
+                  2: FixedColumnWidth(78),
+                  3: FlexColumnWidth(),
                 }, 
                 children: [
                    TableRow(
@@ -67,7 +63,7 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                AppLocalizations.of(context)!.reporttabledate,
+                                AppLocalizations.of(context)!.homeFaststart,
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,
@@ -85,7 +81,7 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                AppLocalizations.of(context)!.reportexcercisesteps,
+                                AppLocalizations.of(context)!.homeFastend,
                                  style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,
@@ -103,7 +99,7 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                AppLocalizations.of(context)!.reportExcercise,
+                                AppLocalizations.of(context)!.type,
                                  style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,
@@ -121,25 +117,7 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                AppLocalizations.of(context)!.reportexcercisetimedk,
-                                 style: GoogleFonts.roboto(
-                                  color: Kcolors.mainBlack,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                )
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Kcolors.lightBlue,
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                AppLocalizations.of(context)!.reportexcercisecalorie,
+                                '${AppLocalizations.of(context)!.reporttabletime}(${AppLocalizations.of(context)!.homeFasthours})',
                                  style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,
@@ -162,11 +140,10 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
               Table(
                 //  border: TableBorder.all(),
                  columnWidths: const {
-                  0: FixedColumnWidth(95.0),
-                  1: FixedColumnWidth(65.0),
-                  2: FlexColumnWidth(),
-                  3: FixedColumnWidth(75.0),
-                  4: FixedColumnWidth(70),
+                  0: FixedColumnWidth(100),
+                  1: FixedColumnWidth(95),
+                  2: FixedColumnWidth(78),
+                  3: FlexColumnWidth(),
                  }, 
                  children: List.generate(
                   tableitemcontentsLocal.length, (index) {
@@ -185,15 +162,29 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                tableitemcontentsLocal[index].date,
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.roboto(
-                                  color: Kcolors.mainBlack,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                )
-                                ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    tableitemcontentsLocal[index].startdate,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                      color: Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
+                                  Text(
+                                    tableitemcontentsLocal[index].starttime,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                      color: Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
+                                ]
+                              )
                             ),
                           ),
                         ),
@@ -208,14 +199,64 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                '${tableitemcontentsLocal[index].steps}',
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.roboto(
-                                  color: Kcolors.mainBlack,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                )
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    tableitemcontentsLocal[index].enddate,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                      color: Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
+                                  Text(
+                                    tableitemcontentsLocal[index].endtime,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                      color: Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
+                                ]
+                              )
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: index % 2 == 0 ?  Kcolors.lightGrey : Colors.transparent,
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(0),
+                              topRight: Radius.circular(0),
+                            ),
+                          ),
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child:  Column(
+                                children: [
+                                  Text(
+                                    '',
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                      color: Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
+                                  Text(
+                                    tableitemcontentsLocal[index].type,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                      color: Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -231,61 +272,28 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                tableitemcontentsLocal[index].excercise,
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.roboto(
-                                  color: Kcolors.mainBlack,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                )
-                                ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: index % 2 == 0 ?  Kcolors.lightGrey : Colors.transparent,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(0),
-                              topRight: Radius.circular(0),
-                            ),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                '${tableitemcontentsLocal[index].time}',
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.roboto(
-                                  color: Kcolors.mainBlack,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                )
-                                ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: index % 2 == 0 ?  Kcolors.lightGrey : Colors.transparent,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(0),
-                              topRight: Radius.circular(0),
-                            ),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                '${tableitemcontentsLocal[index].calorie}',
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.roboto(
-                                  color: Kcolors.mainBlack,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                )
-                                ),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    '',
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                      color: Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
+                                  Text(
+                                    tableitemcontentsLocal[index].hours,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                      color: Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),

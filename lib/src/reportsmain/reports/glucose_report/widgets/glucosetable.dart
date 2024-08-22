@@ -159,6 +159,7 @@ class _GlucoseTableState extends State<GlucoseTable> {
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
                                 tableitemcontentsLocal[index].date,
+                                overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,
@@ -181,6 +182,7 @@ class _GlucoseTableState extends State<GlucoseTable> {
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
                                 tableitemcontentsLocal[index].time,
+                                overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,

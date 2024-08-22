@@ -164,6 +164,7 @@
     "homeExcercise" : "Excercises",
     "homeFood" : "Food",
     "homeCarbohydrate" : "Carb",
+    "homeFullCarbohydrate" : "Carbohydrate",
     "homeProtein" : "Protein",
     "homeFat" : "Fat",
     "homeRemindersTitle" : "Reminders",
@@ -231,9 +232,17 @@
     "reportexcerciseweeklytarget" : "Weekly target",
     "reportexcercisesteps" : "Steps",
     "reportexcercisewalked" : "Walked",
+    "reportexcerciseate" : "Consumed",
     "reportexcerciseactivities" : "Activities",
     "reportexcercisetime" : "Time",
     "reportexcercisedistance" : "Distance",
     "reportexcerciseburntcalories" : "Calores burnt",
-    "reportexcercisetimedk" : "Time(min)"
+    "reportexcercisetimedk" : "Time(min)",
+    "reportfastingtotalhours" : "Total hours",
+    "reportfastingminutes" : "Minutes",
+    "reportfastingincomplete" : "Incomplete",
+    "reportfastingcompleted" : "Complete",
+    "reportweightmyprogress" : "My Progress",
+    "reportclinicremainingdays" : "Remaining days to attend",
+    "reportclinicbelowbtncontactus" : "For more information about clinic, Please press below."
 }

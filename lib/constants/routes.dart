@@ -6,6 +6,7 @@ import 'package:kisukari_mobile_app/src/introduction/intro.dart';
 import 'package:kisukari_mobile_app/src/introduction/resultsscreen/introresults.dart';
 import 'package:kisukari_mobile_app/src/introduction/secondscreen/second_diabetestypes.dart';
 import 'package:kisukari_mobile_app/src/introduction/thirdscreen/third_diabeticmedications.dart';
+import 'package:kisukari_mobile_app/src/reportsmain/widgets/customizereport.dart';
 import 'package:kisukari_mobile_app/utils/settings/languagefile/languagescreen.dart';
 import 'package:kisukari_mobile_app/src/mainentrypoint/mainentrypoint.dart';
 import 'package:kisukari_mobile_app/src/signin/login.dart';
@@ -26,6 +27,7 @@ const String thirdintrodialog = '/thirdintrodialog';
 const String fourthintrodialog = '/fourthintrodialog';
 const String resultsintrodialog = '/resultsintrodialog';
 const String mainentrypoint = '/mainentrypoint';
+const String customizereport = '/customizereport';
 
 
 
@@ -44,6 +46,7 @@ class Routes {
       fourthintrodialog: (context) => const FourthOtherdiseases(),
       resultsintrodialog: (context) => const IntroResults(),
       mainentrypoint: (context) => const MainEntryPoint(),
+      customizereport: (context) => const CustomizeReport(),
     };
   }
 }

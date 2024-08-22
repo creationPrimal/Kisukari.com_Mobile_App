@@ -162,6 +162,7 @@ class _BpTableState extends State<BpTable> {
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
                                 tableitemcontentsLocal[index].date,
+                                overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,

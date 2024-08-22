@@ -164,6 +164,7 @@
     "homeExcercise" : "Mazoezi",
     "homeFood" : "Chakula",
     "homeCarbohydrate" : "Wanga",
+    "homeFullCarbohydrate" : "Wanga",
     "homeProtein" : "Protini",
     "homeFat" : "Mafuta",
     "homeRemindersTitle" : "Kumbusho zijazo",
@@ -231,9 +232,17 @@
     "reportexcerciseweeklytarget" : "Lengo la wiki",
     "reportexcercisesteps" : "Hatua",
     "reportexcercisewalked" : "Ulizotembea",
+    "reportexcerciseate" : "Ulizokula",
     "reportexcerciseactivities" : "Shughuli",
     "reportexcercisetime" : "Muda",
     "reportexcercisedistance" : "Umbali",
     "reportexcerciseburntcalories" : "Kalori ulizochoma",
-    "reportexcercisetimedk" : "Muda(dk)"
+    "reportexcercisetimedk" : "Muda(dk)",
+    "reportfastingtotalhours" : "Jumla ya masaa",
+    "reportfastingminutes" : "Dakika",
+    "reportfastingincomplete" : "Hazikukamilika",
+    "reportfastingcompleted" : "Zilizokamilika",
+    "reportweightmyprogress" : "Maendeleo yangu",
+    "reportclinicremainingdays" : "Siku zilizobaki kuhudhulia",
+    "reportclinicbelowbtncontactus" : "Kwa taarifa zaidi kuhusu kliniki, Bonyeza hapa chini."
 }

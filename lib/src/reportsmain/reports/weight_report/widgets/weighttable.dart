@@ -4,38 +4,32 @@
 
 
 
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:kisukari_mobile_app/src/reportsmain/reports/excercise_report/models/excercisetablemodel.dart';
+import 'package:kisukari_mobile_app/src/reportsmain/reports/weight_report/models/weighttablemodel.dart';
 
-class ExcerciseTable extends StatefulWidget {
-  const ExcerciseTable({super.key});
+class WeightTable extends StatefulWidget {
+  const WeightTable({super.key});
 
   @override
-  State<ExcerciseTable> createState() => _ExcerciseTableState();
+  State<WeightTable> createState() => _WeightTableState();
 }
 
-class _ExcerciseTableState extends State<ExcerciseTable> {
+class _WeightTableState extends State<WeightTable> {
 
-  late List<ExcerciseTableItems> tableitemcontentsLocal;
-
+  late List<WeightTableItems> tableitemcontentsLocal;
 
 
   @override
-  void didChangeDependencies() {
+  void initState() {
     tableListItems();
-    super.didChangeDependencies();
+    super.initState();
   }
 
   void tableListItems() {
-      tableitemcontentsLocal = tableitemcontents.take(7).toList();
-      
+      tableitemcontentsLocal = tableitemcontents;
   }
 
   @override
@@ -43,18 +37,17 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
 
     return Container(
        width: MediaQuery.of(context).size.width,
-       margin: const EdgeInsets.only(top: 25, bottom: 10),
+       margin: const EdgeInsets.only(top: 30, bottom: 10),
        child:   
            Column(
              children: [
               // Title table row
               Table(
                 columnWidths: const {
-                  0: FixedColumnWidth(95.0),
-                  1: FixedColumnWidth(65.0),
-                  2: FlexColumnWidth(),
-                  3: FixedColumnWidth(75.0),
-                  4: FixedColumnWidth(70),
+                  0: FixedColumnWidth(100),
+                  1: FixedColumnWidth(80),
+                  2: FixedColumnWidth(80),
+                  3: FlexColumnWidth(),
                 }, 
                 children: [
                    TableRow(
@@ -70,7 +63,7 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                                 AppLocalizations.of(context)!.reporttabledate,
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
-                                  fontSize: 15,
+                                  fontSize: 17,
                                   fontWeight: FontWeight.bold,
                                 )
                               ),
@@ -85,10 +78,10 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                AppLocalizations.of(context)!.reportexcercisesteps,
+                                AppLocalizations.of(context)!.weight,
                                  style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
-                                  fontSize: 15,
+                                  fontSize: 17,
                                   fontWeight: FontWeight.bold,
                                 )
                               ),
@@ -103,10 +96,10 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                AppLocalizations.of(context)!.reportExcercise,
+                                AppLocalizations.of(context)!.height,
                                  style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
-                                  fontSize: 15,
+                                  fontSize: 17,
                                   fontWeight: FontWeight.bold,
                                 )
                               ),
@@ -121,28 +114,10 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                AppLocalizations.of(context)!.reportexcercisetimedk,
+                                'BMI',
                                  style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                )
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Kcolors.lightBlue,
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                AppLocalizations.of(context)!.reportexcercisecalorie,
-                                 style: GoogleFonts.roboto(
-                                  color: Kcolors.mainBlack,
-                                  fontSize: 15,
+                                  fontSize: 17,
                                   fontWeight: FontWeight.bold,
                                 )
                               ),
@@ -162,11 +137,10 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
               Table(
                 //  border: TableBorder.all(),
                  columnWidths: const {
-                  0: FixedColumnWidth(95.0),
-                  1: FixedColumnWidth(65.0),
-                  2: FlexColumnWidth(),
-                  3: FixedColumnWidth(75.0),
-                  4: FixedColumnWidth(70),
+                  0: FixedColumnWidth(100),
+                  1: FixedColumnWidth(80),
+                  2: FixedColumnWidth(80),
+                  3: FlexColumnWidth(),
                  }, 
                  children: List.generate(
                   tableitemcontentsLocal.length, (index) {
@@ -209,7 +183,7 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                '${tableitemcontentsLocal[index].steps}',
+                                '${tableitemcontentsLocal[index].weight}',
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
@@ -232,14 +206,14 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                tableitemcontentsLocal[index].excercise,
+                                '${tableitemcontentsLocal[index].height}',
                                 overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
                                   fontSize: 15,
                                   fontWeight: FontWeight.w600,
                                 )
-                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -254,38 +228,28 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                '${tableitemcontentsLocal[index].time}',
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.roboto(
-                                  color: Kcolors.mainBlack,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                )
-                                ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: index % 2 == 0 ?  Kcolors.lightGrey : Colors.transparent,
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(0),
-                              topRight: Radius.circular(0),
-                            ),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                '${tableitemcontentsLocal[index].calorie}',
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.roboto(
-                                  color: Kcolors.mainBlack,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                )
-                                ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    '${tableitemcontentsLocal[index].bmi}',
+                                    style: GoogleFonts.roboto(
+                                      color: Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                    ),
+                                     tableitemcontentsLocal[index].bmi > 9.0
+                                      ? const GoldArrowIndicator() // Display GoldArrowIndicator if reading > 9.0
+                                      : const SizedBox.shrink(), // Display nothing
+                                    tableitemcontentsLocal[index].bmi < 5.0
+                                      ? const RedArrowIndicator() // Display RedArrowIndicator if reading < 5.0
+                                      : const SizedBox.shrink(), // Display nothing
+                                    tableitemcontentsLocal[index].bmi >= 5.0 && tableitemcontentsLocal[index].bmi <= 9.0
+                                      ? const GreenArrowIndicator() // Display GreenArrowIndicator if reading >= 5.0 nad <= 9.0
+                                      : const SizedBox.shrink(), // Display nothing
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -301,6 +265,62 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
 }
 
 
+
+
+
+//Gold Indicator arrow
+class GoldArrowIndicator extends StatelessWidget {
+  const GoldArrowIndicator({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: Icon(
+        Icons.arrow_upward,
+            color: Kcolors.mainGold,
+            size: 15,
+      ),
+
+    );
+  }
+}
+
+//Gold Indicator arrow
+class GreenArrowIndicator extends StatelessWidget {
+  const GreenArrowIndicator({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: Icon(
+        Icons.arrow_forward,
+            color: Kcolors.mainGreen,
+            size: 15,
+      ),
+
+    );
+  }
+}
+
+//Gold Indicator arrow
+class RedArrowIndicator extends StatelessWidget {
+  const RedArrowIndicator({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: Icon(
+        Icons.arrow_downward,
+            color: Kcolors.mainRed,
+            size: 15,
+      ),
+
+    );
+  }
+}
 
 
 
