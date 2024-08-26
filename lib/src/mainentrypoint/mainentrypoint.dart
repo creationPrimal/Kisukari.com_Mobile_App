@@ -85,76 +85,85 @@ class _MainEntryPointState extends State<MainEntryPoint> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Scaffold(
-          body: _screens[_currentIndex],
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: _currentIndex,
-            onTap: _onTabTapped,
-            iconSize: 20,
-            type: BottomNavigationBarType.fixed,
-            unselectedItemColor: Kcolors.mainBlack,
-            selectedItemColor: Kcolors.mainRed,
-            showUnselectedLabels: true,
-            selectedLabelStyle: GoogleFonts.roboto(
-              fontSize: 14,
-              fontWeight: FontWeight.w700,
-            ),
-            unselectedLabelStyle: GoogleFonts.roboto(
-              fontSize: 14,
-              height:1.5,
-              fontWeight: FontWeight.w700,
-            ),
-            items: [
-              BottomNavigationBarItem(
-                icon: SizedBox(
-                  height: 20,
-                  child: Image.asset(
-                    todayIconPath,
-                  )
-                  ),
-                label: AppLocalizations.of(context)!.navbarToday,
-              ),
-              BottomNavigationBarItem(
-                icon: const FaIcon(FontAwesomeIcons.chartLine),
-                label: AppLocalizations.of(context)!.navbarReport,
-              ),
-              BottomNavigationBarItem(
-                icon: SizedBox(
-                  height: 42,
-                  width: 42,
-                  child: Icon(Icons.add_circle_sharp,
-                  size: 42,
-                  color: Kcolors.mainRed,
-                  )
-                  ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon:  SizedBox(
-                  height: 20,
-                  child: Image.asset(
-                    communityIconPath,
-                  )
-                  ),
-                label: AppLocalizations.of(context)!.navbarCommunity,
-              ),
-              BottomNavigationBarItem(
-                icon: const FaIcon(FontAwesomeIcons.arrowUpRightFromSquare),
-                label: AppLocalizations.of(context)!.navbarMore,
-              ),
-            ],
-          ),
-        ),
-        if (_isOverlayVisible)
+    return Scaffold(
+      body: Stack(
+        children: [ 
+          _screens[_currentIndex] ,
+          if (_isOverlayVisible)
           Positioned.fill(
             child: Opacity(
               opacity: 1,
               child: LogEntries(hideOverlay: _hideOverlay),
             ),
           ),
-      ],
+        ]
+        ),
+      
+      bottomNavigationBar: 
+      !_isOverlayVisible ? // if overlay buttons for log entries are visible then the nav to disappear.. DO NOT REMOVE THIS ELEMENT LINE
+        BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: _onTabTapped,
+          iconSize: 20,
+          type: BottomNavigationBarType.fixed,
+          unselectedItemColor: Kcolors.mainBlack,
+          selectedItemColor: Kcolors.mainRed,
+          showUnselectedLabels: true,
+          selectedLabelStyle: GoogleFonts.roboto(
+            fontSize: 14,
+            fontWeight: FontWeight.w700,
+          ),
+          unselectedLabelStyle: GoogleFonts.roboto(
+            fontSize: 14,
+            height:1.5,
+            fontWeight: FontWeight.w700,
+          ),
+          items: [
+            BottomNavigationBarItem(
+              icon: SizedBox(
+                height: 20,
+                child: Image.asset(
+                  todayIconPath,
+                )
+                ),
+              label: AppLocalizations.of(context)!.navbarToday,
+            ),
+            BottomNavigationBarItem(
+              icon: const FaIcon(FontAwesomeIcons.chartLine),
+              label: AppLocalizations.of(context)!.navbarReport,
+            ),
+            BottomNavigationBarItem(
+              icon: SizedBox(
+                height: 42,
+                width: 42,
+                child: Icon(Icons.add_circle_sharp,
+                size: 42,
+                color: Kcolors.mainRed,
+                )
+                ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon:  SizedBox(
+                height: 20,
+                child: Image.asset(
+                  communityIconPath,
+                )
+                ),
+              label: AppLocalizations.of(context)!.navbarCommunity,
+            ),
+            BottomNavigationBarItem(
+              icon: const FaIcon(FontAwesomeIcons.arrowUpRightFromSquare),
+              label: AppLocalizations.of(context)!.navbarMore,
+            ),
+          ],
+        )
+
+
+      :  // if overlay buttons for log entries are invisible then the nav to appear.. DO NOT REMOVE THIS ELEMENT LINE
+
+
+      const SizedBox.shrink()
     );
   }
 }

@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/autogreetings.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/homeclinic.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/homefasting.dart';
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 20,
-                  backgroundImage: const NetworkImage('https://i.pinimg.com/564x/ae/72/61/ae7261114527edf8911671b8ab675c74.jpg'),
+                  backgroundImage: const AssetImage('assets/app_images/yassinimage.png'), // Use cached network image
                   backgroundColor: Kcolors.lightBlue,
                 ),
                  
@@ -49,24 +50,29 @@ class HomeScreen extends StatelessWidget {
                   )
                 ),
 
-                SizedBox(
-                  child: 
-                    badges.Badge(
-                      badgeContent: Text('23',
-                      style: GoogleFonts.roboto(
-                        color: Kcolors.mainWhite,
-                        fontSize: 10,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context , homenotifications);
+                  },
+                  child: SizedBox(
+                    child: 
+                      badges.Badge(
+                        badgeContent: Text('23',
+                        style: GoogleFonts.roboto(
+                          color: Kcolors.mainWhite,
+                          fontSize: 10,
+                        )
+                        ),
+                        position: badges.BadgePosition.topEnd(top: 0, end: 0),
+                        badgeStyle: badges.BadgeStyle(
+                          padding: const EdgeInsets.all(3),
+                          badgeColor: Kcolors.mainRed,
+                        ),
+                        child: const Icon(Icons.notifications_outlined,
+                        size: 33,
+                        ),
                       )
-                      ),
-                      position: badges.BadgePosition.topEnd(top: 0, end: 0),
-                      badgeStyle: badges.BadgeStyle(
-                        padding: const EdgeInsets.all(3),
-                        badgeColor: Kcolors.mainRed,
-                      ),
-                      child: const Icon(Icons.notifications_outlined,
-                      size: 33,
-                      ),
-                    )
+                  ),
                 )
               ]
             )

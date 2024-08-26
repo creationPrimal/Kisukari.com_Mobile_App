@@ -49,6 +49,8 @@ dependencies:
   fl_chart: ^0.68.0
   syncfusion_flutter_datagrid: ^26.2.9
   provider: ^6.1.2
+  animate_do: ^3.3.4
+  calendar_date_picker2: ^1.1.5
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +83,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+  
+    - assets/app_images/yassinimage.png
     - assets/app_images/splashimage.jpg
     - assets/app_images/kisukari.com-logo.png
     - assets/app_icons/Flag_of_Tanzania.png
@@ -129,6 +133,21 @@ flutter:
     - assets/app_icons/waterinsulin.png
     - assets/app_icons/milkinsulin.png
     - assets/app_icons/onepillicon.png
+    - assets/app_icons/remindericonColored.png
+    - assets/app_icons/notesiconColored.png
+    - assets/app_icons/hourglass.png
+    - assets/app_icons/profile.png
+    - assets/app_icons/logout.png
+    - assets/app_icons/settings.png
+    - assets/app_icons/policies.png
+    - assets/app_icons/selftest.png
+    - assets/app_icons/help.png
+    - assets/app_icons/target.png
+    - assets/app_icons/debitcard.png
+    - assets/app_icons/m_pesaicon.png
+    - assets/app_icons/airtelmoney.png
+    - assets/app_icons/tigologo.png
+    - assets/app_icons/fastingcolored.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

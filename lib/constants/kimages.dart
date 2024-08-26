@@ -58,7 +58,23 @@ class Kicons {
   static String reportwaterinsulinIcon = 'assets/app_icons/waterinsulin.png';
   static String reportmilkinsulinIcon = 'assets/app_icons/milkinsulin.png';
   static String onepillIcon = 'assets/app_icons/onepillicon.png';
+  static String reminderColorIcon = 'assets/app_icons/remindericonColored.png';
+  static String notesColorIcon = 'assets/app_icons/notesiconColored.png';
+  static String hourglassIcon = 'assets/app_icons/hourglass.png';
+  static String profileIcon = 'assets/app_icons/profile.png';
+  static String logoutIcon = 'assets/app_icons/logout.png';
+  static String settingsIcon = 'assets/app_icons/settings.png';
+  static String policiesIcon = 'assets/app_icons/policies.png';
+  static String selftestIcon = 'assets/app_icons/selftest.png';
+  static String helpIcon = 'assets/app_icons/help.png';
+  static String targetIcon = 'assets/app_icons/target.png';
+  static String debitcardIcon = 'assets/app_icons/debitcard.png';
+  static String mpesalogoIcon = 'assets/app_icons/m_pesaicon.png';
+  static String airtellogoIcon = 'assets/app_icons/airtelmoney.png';
+  static String tigologoIcon = 'assets/app_icons/tigologo.png';
+  static String fastingColoredIcon = 'assets/app_icons/fastingcolored.png';
    
-   
+ 
+  
    
 }

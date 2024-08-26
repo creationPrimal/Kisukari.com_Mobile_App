@@ -1,5 +1,6 @@
 
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
@@ -83,79 +84,85 @@ class _ReportTypeBtnsState extends State<ReportTypeBtns> {
           ),
 
           // report buttons
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              color: Kcolors.lightGrey.withOpacity(0.6),
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: 
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 14.0, bottom: 14),
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    alignment: WrapAlignment.start,
-                    spacing: 25.0,
-                    runSpacing: 20.0,
-                    children: List.generate(
-                      btnlistitems.length, (index) {
-                        final btn = btnlistitems[index];
-                        return GestureDetector(
-                          onTap: () {
-                            btnColorChange(index);
-                          },
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: btn.isActive ? Kcolors.lightBlue : Kcolors.mainWhite,
-                                  borderRadius: BorderRadius.circular(50),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Kcolors.mainBlack.withOpacity(0.1),
-                                      spreadRadius: 1,
-                                      blurRadius: 1,
-                                      offset: const Offset(0, 2)
-                                    )
-                                  ]
-                                ),
-                                child:
-                                  Center(
-                                    child: SizedBox(
-                                      height: 30,
-                                      width: 30,
-                                      child: ClipRRect(
-                                        child: Image.asset(
-                                          btn.iconPath,
-                                          fit: BoxFit.cover
+          
+          FadeIn(
+            duration: const Duration(milliseconds: 350),
+            animate: true,
+            child: Container(
+              margin: const EdgeInsets.only(top: 10),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: Kcolors.lightGrey.withOpacity(0.6),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: 
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 14.0, bottom: 14),
+                    child: Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      alignment: WrapAlignment.start,
+                      spacing: 25.0,
+                      runSpacing: 20.0,
+                      children: List.generate(
+                        btnlistitems.length, (index) {
+                          final btn = btnlistitems[index];
+                          return GestureDetector(
+                            onTap: () {
+                              btnColorChange(index);
+                            },
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: btn.isActive ? Kcolors.lightBlue : Kcolors.mainWhite,
+                                    borderRadius: BorderRadius.circular(50),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Kcolors.mainBlack.withOpacity(0.1),
+                                        spreadRadius: 1,
+                                        blurRadius: 1,
+                                        offset: const Offset(0, 2)
+                                      )
+                                    ]
+                                  ),
+                                  child:
+                                    Center(
+                                      child: SizedBox(
+                                        height: 30,
+                                        width: 30,
+                                        child: ClipRRect(
+                                          child: Image.asset(
+                                            btn.iconPath,
+                                            fit: BoxFit.cover
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  )
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 8.0),
-                                child: Text(
-                                  btn.title,
-                                  style: GoogleFonts.roboto(
-                                    color: btn.isActive ? Kcolors.darkBlue : Kcolors.mainBlack,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold
-                                  )
+                                    )
                                 ),
-                              )
-                            ],
-                          ),
-                        );
-                      }
-                    )
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8.0),
+                                  child: Text(
+                                    btn.title,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.roboto(
+                                      color: btn.isActive ? Kcolors.darkBlue : Kcolors.mainBlack,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold
+                                    )
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
+                        }
+                      )
+                    ),
                   ),
-                ),
-              )
+                )
+            ),
           ),
 
 

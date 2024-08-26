@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:kisukari_mobile_app/src/reportsmain/widgets/reporttypebtns.dart';
 import 'package:kisukari_mobile_app/src/reportsmain/widgets/topdurationbtns.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ReportsMainScreen extends StatefulWidget {
   const ReportsMainScreen({super.key});
@@ -31,7 +32,7 @@ class _ReportsMainScreenState extends State<ReportsMainScreen> {
             width: MediaQuery.of(context).size.width,
             child: 
               Text(
-                'Ripoti na maendeleo',
+                AppLocalizations.of(context)!.reportscreentitle,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
                   color: Kcolors.mainRed,
