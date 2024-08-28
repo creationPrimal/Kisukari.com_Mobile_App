@@ -26,12 +26,12 @@ class _DiabetestypesWidgetState extends State<DiabetestypesWidget> {
   void _initializeitems() {
 
     _items = [
-      ChecklistItem(name: AppLocalizations.of(context)!.diabetesType1 , isChecked: true, description: AppLocalizations.of(context)!.diabetesType1Desc ),
-      ChecklistItem(name: AppLocalizations.of(context)!.diabetesType2 , isChecked: false, description: AppLocalizations.of(context)!.diabetesType2Desc ),
-      ChecklistItem(name: AppLocalizations.of(context)!.gestationalDiabetes , isChecked: false, description: AppLocalizations.of(context)!.gestationalDiabetesDesc ),
-      ChecklistItem(name: AppLocalizations.of(context)!.otherTypeDiabetes , isChecked: false, description: AppLocalizations.of(context)!.otherTypeDiabetesDesc ),
-      ChecklistItem(name: AppLocalizations.of(context)!.noDiabetes , isChecked: false, description: AppLocalizations.of(context)!.noDiabetesDesc ),
-      ChecklistItem(name: AppLocalizations.of(context)!.noDiabetes , isChecked: false, description: AppLocalizations.of(context)!.idontknowDiabetesDesc ),
+      ChecklistItem(name: AppLocalizations.of(context)!.diabetesType1 , isChecked: true, description: AppLocalizations.of(context)!.diabetesType1Desc , value: 'diabetes_type1' ),
+      ChecklistItem(name: AppLocalizations.of(context)!.diabetesType2 , isChecked: false, description: AppLocalizations.of(context)!.diabetesType2Desc , value: 'diabetes_type2' ),
+      ChecklistItem(name: AppLocalizations.of(context)!.gestationalDiabetes , isChecked: false, description: AppLocalizations.of(context)!.gestationalDiabetesDesc , value: 'gestational_diabetes' ),
+      ChecklistItem(name: AppLocalizations.of(context)!.otherTypeDiabetes , isChecked: false, description: AppLocalizations.of(context)!.otherTypeDiabetesDesc , value: 'other_type' ),
+      ChecklistItem(name: AppLocalizations.of(context)!.noDiabetes , isChecked: false, description: AppLocalizations.of(context)!.noDiabetesDesc , value: 'no_diabetes' ),
+      ChecklistItem(name: AppLocalizations.of(context)!.idontknowDiabetes , isChecked: false, description: AppLocalizations.of(context)!.idontknowDiabetesDesc , value: 'dont_know_diabetes' ),
       ];
   }
 
@@ -123,10 +123,12 @@ class ChecklistItem {
   ChecklistItem({
     required this.name,
     required this.description,
+    required this.value,
     this.isChecked = false,
   });
 
   String name;
   String description;
+  String value;
   bool isChecked;
 }

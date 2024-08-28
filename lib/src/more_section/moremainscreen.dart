@@ -213,49 +213,54 @@ class MoreScreen extends StatelessWidget {
                             ),
 
                             // self test
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.44,
-                              decoration: BoxDecoration(
-                                color: Kcolors.mainWhite,
-                                borderRadius: BorderRadius.circular(8),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Kcolors.mainBlack.withOpacity(0.1),
-                                    blurRadius: 0.2,
-                                    spreadRadius: 0.1,
-                                    offset: const Offset(0 , 2)
-
-                                  )
-                                ]
-                              ),
-                              child: 
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        height: 60,
-                                        width: 60,
-                                        child:
-                                          Image.asset(
-                                            Kicons.selftestIcon,
-                                            fit: BoxFit.cover,
-                                          )
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 8.0),
-                                        child: Text(
-                                          AppLocalizations.of(context)!.morescreenTest,
-                                          style: GoogleFonts.roboto(
-                                            color: Kcolors.mainBlack,
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.bold
-                                          )
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, selftest);
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.44,
+                                decoration: BoxDecoration(
+                                  color: Kcolors.mainWhite,
+                                  borderRadius: BorderRadius.circular(8),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Kcolors.mainBlack.withOpacity(0.1),
+                                      blurRadius: 0.2,
+                                      spreadRadius: 0.1,
+                                      offset: const Offset(0 , 2)
+                              
+                                    )
+                                  ]
+                                ),
+                                child: 
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          height: 60,
+                                          width: 60,
+                                          child:
+                                            Image.asset(
+                                              Kicons.selftestIcon,
+                                              fit: BoxFit.cover,
+                                            )
                                         ),
-                                      )
-                                    ]
-                                  ),
-                                )
+                                        Padding(
+                                          padding: const EdgeInsets.only(top: 8.0),
+                                          child: Text(
+                                            AppLocalizations.of(context)!.morescreenTest,
+                                            style: GoogleFonts.roboto(
+                                              color: Kcolors.mainBlack,
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.bold
+                                            )
+                                          ),
+                                        )
+                                      ]
+                                    ),
+                                  )
+                              ),
                             )
                           ]
                         ),
@@ -407,66 +412,76 @@ class MoreScreen extends StatelessWidget {
                             children: [
 
                               // my profile
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 12.0),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      height: 35,
-                                      width: 35,
-                                      margin: const EdgeInsets.only(right: 15),
-                                      child: 
-                                        Image.asset(
-                                          Kicons.profileIcon,
-                                          fit: BoxFit.cover,
-                                        )
-                                    ),
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width * 0.65,
-                                      child: 
-                                        Text(
-                                           AppLocalizations.of(context)!.morescreenProfileBtn,
-                                          style: GoogleFonts.roboto(
-                                            color: Kcolors.mainBlack,
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.bold
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context, mainprofilescreen);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 12.0),
+                                  child: Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        height: 35,
+                                        width: 35,
+                                        margin: const EdgeInsets.only(right: 15),
+                                        child: 
+                                          Image.asset(
+                                            Kicons.profileIcon,
+                                            fit: BoxFit.cover,
                                           )
-                                        )
-                                    )
-                                  ]
+                                      ),
+                                      SizedBox(
+                                        width: MediaQuery.of(context).size.width * 0.65,
+                                        child: 
+                                          Text(
+                                             AppLocalizations.of(context)!.morescreenProfileBtn,
+                                            style: GoogleFonts.roboto(
+                                              color: Kcolors.mainBlack,
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.bold
+                                            )
+                                          )
+                                      )
+                                    ]
+                                  ),
                                 ),
                               ),
 
                               // settings
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 12.0),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      height: 35,
-                                      width: 35,
-                                      margin: const EdgeInsets.only(right: 15),
-                                      child: 
-                                        Image.asset(
-                                          Kicons.settingsIcon,
-                                          fit: BoxFit.cover,
-                                        )
-                                    ),
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width * 0.65,
-                                      child: 
-                                        Text(
-                                           AppLocalizations.of(context)!.morescreenSettingsBtn,
-                                          style: GoogleFonts.roboto(
-                                            color: Kcolors.mainBlack,
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.bold
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context, appsettings);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 12.0),
+                                  child: Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        height: 35,
+                                        width: 35,
+                                        margin: const EdgeInsets.only(right: 15),
+                                        child: 
+                                          Image.asset(
+                                            Kicons.settingsIcon,
+                                            fit: BoxFit.cover,
                                           )
-                                        )
-                                    )
-                                  ]
+                                      ),
+                                      SizedBox(
+                                        width: MediaQuery.of(context).size.width * 0.65,
+                                        child: 
+                                          Text(
+                                             AppLocalizations.of(context)!.morescreenSettingsBtn,
+                                            style: GoogleFonts.roboto(
+                                              color: Kcolors.mainBlack,
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.bold
+                                            )
+                                          )
+                                      )
+                                    ]
+                                  ),
                                 ),
                               ),
 
@@ -502,7 +517,7 @@ class MoreScreen extends StatelessWidget {
                                 ),
                               ),
 
-                              // policies
+                              // help
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [

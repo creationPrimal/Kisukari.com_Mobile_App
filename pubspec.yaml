@@ -51,6 +51,8 @@ dependencies:
   provider: ^6.1.2
   animate_do: ^3.3.4
   calendar_date_picker2: ^1.1.5
+  modal_bottom_sheet: ^3.0.0
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +89,7 @@ flutter:
     - assets/app_images/yassinimage.png
     - assets/app_images/splashimage.jpg
     - assets/app_images/kisukari.com-logo.png
+    - assets/app_images/selftestbg.png
     - assets/app_icons/Flag_of_Tanzania.png
     - assets/app_icons/Flag_of_America.png
     - assets/app_icons/test.png
@@ -148,6 +151,7 @@ flutter:
     - assets/app_icons/airtelmoney.png
     - assets/app_icons/tigologo.png
     - assets/app_icons/fastingcolored.png
+    - assets/app_icons/deletecoloredicon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

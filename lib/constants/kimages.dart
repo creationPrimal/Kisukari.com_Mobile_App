@@ -8,6 +8,7 @@ class Kimages {
   static String logo = 'assets/app_images/kisukari.com-logo.png';
   static String logoTitle = 'assets/app_images/kisukari.com-logo.png';
   static String splashImage = 'assets/app_images/splashimage.jpg';
+  static String selftestImage = 'assets/app_images/selftestbg.png';
 }
 
 
@@ -73,7 +74,7 @@ class Kicons {
   static String airtellogoIcon = 'assets/app_icons/airtelmoney.png';
   static String tigologoIcon = 'assets/app_icons/tigologo.png';
   static String fastingColoredIcon = 'assets/app_icons/fastingcolored.png';
-   
+  static String deleteColoredIcon = 'assets/app_icons/deletecoloredicon.png';
  
   
    

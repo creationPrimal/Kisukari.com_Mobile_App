@@ -15,4 +15,5 @@ class Kcolors {
   static Color mainGreen = const Color.fromRGBO(0, 185, 18, 1);
   static Color lightGreen = const Color.fromRGBO(102, 183, 110, 1);
   static Color mainGold = const Color.fromRGBO(255, 168, 0, 1);
+  static Color mainBlue = const Color.fromARGB(255, 0, 81, 255);
 }
