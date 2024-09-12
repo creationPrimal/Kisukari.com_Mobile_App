@@ -53,7 +53,7 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                   0: FixedColumnWidth(95.0),
                   1: FixedColumnWidth(65.0),
                   2: FlexColumnWidth(),
-                  3: FixedColumnWidth(75.0),
+                  3: FixedColumnWidth(80.0),
                   4: FixedColumnWidth(70),
                 }, 
                 children: [
@@ -165,7 +165,7 @@ class _ExcerciseTableState extends State<ExcerciseTable> {
                   0: FixedColumnWidth(95.0),
                   1: FixedColumnWidth(65.0),
                   2: FlexColumnWidth(),
-                  3: FixedColumnWidth(75.0),
+                  3: FixedColumnWidth(80.0),
                   4: FixedColumnWidth(70),
                  }, 
                  children: List.generate(

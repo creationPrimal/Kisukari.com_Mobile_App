@@ -1,7 +1,7 @@
 
 // constants
 const String iconsRoute = 'assets/app_icons/';
-const String imagessRoute = 'assets/app_images/';
+const String imagesRoute = 'assets/app_images/';
 
 
 class Kimages {

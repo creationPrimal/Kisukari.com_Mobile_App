@@ -45,5 +45,80 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<!--permissions-->
+	<!-- Photo Library Access -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need access to your photo library to view photos.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>We need access to save photos to your library.</string>
+
+    <!-- Camera Access -->
+    <key>NSCameraUsageDescription</key>
+    <string>We need access to your camera to take photos.</string>
+
+    <!-- Location Services Access -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need your location to provide location-based services.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We need your location to provide background location services.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We need your location for continuous location tracking.</string>
+
+    <!-- Microphone Access -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We need access to your microphone for audio recording.</string>
+
+    <!-- Contacts Access -->
+    <key>NSContactsUsageDescription</key>
+    <string>We need access to your contacts to connect with your friends.</string>
+
+    <!-- Calendar Access -->
+    <key>NSCalendarsUsageDescription</key>
+    <string>We need access to your calendar to manage events.</string>
+
+    <!-- Reminders Access -->
+    <key>NSRemindersUsageDescription</key>
+    <string>We need access to your reminders to manage tasks.</string>
+
+    <!-- Bluetooth Access -->
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>We need Bluetooth access to connect with devices.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>We need Bluetooth access to communicate with peripherals.</string>
+
+    <!-- Health Data Access -->
+    <key>NSHealthShareUsageDescription</key>
+    <string>We need access to share your health data.</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>We need access to update your health data.</string>
+
+    <!-- Speech Recognition -->
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>We need access to recognize speech for voice commands.</string>
+
+    <!-- Motion and Fitness -->
+    <key>NSMotionUsageDescription</key>
+    <string>We need access to your motion and fitness data for activity tracking.</string>
+
+    <!-- Face ID -->
+    <key>NSFaceIDUsageDescription</key>
+    <string>We need access to Face ID for secure authentication.</string>
+
+    <!-- NFC Scanning -->
+    <key>NFCReaderUsageDescription</key>
+    <string>We need access to NFC to scan tags.</string>
+
+    <!-- Apple Music and Media Library Access -->
+    <key>NSAppleMusicUsageDescription</key>
+    <string>We need access to your Apple Music library.</string>
+    <key>NSMediaLibraryUsageDescription</key>
+    <string>We need access to your media library for music playback.</string>
+
+    <!-- HomeKit -->
+    <key>NSHomeKitUsageDescription</key>
+    <string>We need access to control your smart home devices.</string>
+
+
 </dict>
 </plist>

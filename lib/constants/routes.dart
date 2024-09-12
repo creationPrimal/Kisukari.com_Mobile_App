@@ -1,5 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:kisukari_mobile_app/src/community/screens/communityhome/widgets/postcontent.dart';
+import 'package:kisukari_mobile_app/src/community/screens/communitymessagess/communitymessages.dart';
+import 'package:kisukari_mobile_app/src/community/screens/communitymessagess/chatscreen/chatscreen.dart';
+import 'package:kisukari_mobile_app/src/community/screens/communitymessagess/chatinfoscreen/chatinfo.dart';
 import 'package:kisukari_mobile_app/src/introduction/firstscreen/first_intro_dialog.dart';
 import 'package:kisukari_mobile_app/src/introduction/fourthscreen/fourth_otherdiseases.dart';
 import 'package:kisukari_mobile_app/src/introduction/intro.dart';
@@ -10,6 +14,8 @@ import 'package:kisukari_mobile_app/src/more_section/appprofile/app_profile.dart
 import 'package:kisukari_mobile_app/src/more_section/appsettings/appsettings.dart';
 import 'package:kisukari_mobile_app/src/more_section/appprofile/widgets/profiledetailsset.dart';
 import 'package:kisukari_mobile_app/src/more_section/intermittentfasting/fastingmainscreen.dart';
+import 'package:kisukari_mobile_app/src/more_section/plansandgoals/plansedit.dart';
+import 'package:kisukari_mobile_app/src/more_section/plansandgoals/plansmain.dart';
 import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_eighthscreen.dart';
 import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_fifthscreen.dart';
 import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_fourthscreen.dart';
@@ -63,6 +69,20 @@ const String selftestseventhscreen = '/selftestseventhscreen';
 const String selftesteighthscreen = '/selftesteighthscreen';
 const String selftestresultsscreen = '/selftestresultsscreen';
 
+// other
+const String plansmain = '/plansmain';
+const String plansedit = '/plansedit';
+
+// community
+const String postcontent = '/postcontent';
+const String communitymessages = '/communitymessages';
+const String communitychat = '/communitychat';
+const String communitychatinfo = '/communitychatinfo';
+
+
+
+
+
 
 
 class Routes {
@@ -97,6 +117,12 @@ class Routes {
       selftestseventhscreen: (context) => const SelfTestSeventhScreen(),
       selftesteighthscreen: (context) => const SelfTestEighthScreen(),
       selftestresultsscreen: (context) => const SelfTestResultScreen(),
+      plansmain: (context) => const PlansMain(),
+      plansedit: (context) => const PlansEdit(),
+      postcontent: (context) => const PostContent(),
+      communitymessages: (context) => const CommunityMessages(),
+      communitychat: (context) => const CommunityChatScreen(),
+      communitychatinfo: (context) => const ChatInfo(),
     };
   }
 }

@@ -198,13 +198,16 @@ class MoreScreen extends StatelessWidget {
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(top: 8.0),
-                                        child: Text(
-                                          AppLocalizations.of(context)!.morescreenMyclinic,
-                                          style: GoogleFonts.roboto(
-                                            color: Kcolors.mainBlack,
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.bold
-                                          )
+                                        child: SizedBox(
+                                          height: 40,
+                                          child: Text(
+                                            AppLocalizations.of(context)!.morescreenMyclinic,
+                                            style: GoogleFonts.roboto(
+                                              color: Kcolors.mainBlack,
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.bold
+                                            )
+                                          ),
                                         ),
                                       )
                                     ]
@@ -248,13 +251,18 @@ class MoreScreen extends StatelessWidget {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(top: 8.0),
-                                          child: Text(
-                                            AppLocalizations.of(context)!.morescreenTest,
-                                            style: GoogleFonts.roboto(
-                                              color: Kcolors.mainBlack,
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.bold
-                                            )
+                                          child: SizedBox(
+                                            height: 40,
+                                            child: Text(
+                                              AppLocalizations.of(context)!.morescreenTestTitle,
+                                              textAlign: TextAlign.center,
+                                              style: GoogleFonts.roboto(
+                                                color: Kcolors.mainBlack,
+                                                fontSize: 17,
+                                                height: 1.2,
+                                                fontWeight: FontWeight.bold
+                                              )
+                                            ),
                                           ),
                                         )
                                       ]
@@ -339,53 +347,58 @@ class MoreScreen extends StatelessWidget {
                     ),
 
                     // plans and target button
-                    Container(
-                      margin: const EdgeInsets.only(top: 15),
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        color: Kcolors.mainWhite,
-                        borderRadius: BorderRadius.circular(8),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Kcolors.mainBlack.withOpacity(0.1),
-                            blurRadius: 0.2,
-                            spreadRadius: 0.1,
-                            offset: const Offset(0 , 2)
-
-                          )
-                        ]
-                      ),
-                      child:
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                height: 35,
-                                width: 35,
-                                margin: const EdgeInsets.only(right: 15),
-                                child: 
-                                  Image.asset(
-                                    Kicons.targetIcon,
-                                    fit: BoxFit.cover,
-                                  )
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.65,
-                                child: 
-                                  Text(
-                                     AppLocalizations.of(context)!.morescreenPlansBtn,
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainBlack,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, plansmain);
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 15),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          color: Kcolors.mainWhite,
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Kcolors.mainBlack.withOpacity(0.1),
+                              blurRadius: 0.2,
+                              spreadRadius: 0.1,
+                              offset: const Offset(0 , 2)
+                      
+                            )
+                          ]
+                        ),
+                        child:
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 35,
+                                  width: 35,
+                                  margin: const EdgeInsets.only(right: 15),
+                                  child: 
+                                    Image.asset(
+                                      Kicons.targetIcon,
+                                      fit: BoxFit.cover,
                                     )
-                                  )
-                              )
-                            ]
-                          ),
-                        )
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.65,
+                                  child: 
+                                    Text(
+                                       AppLocalizations.of(context)!.morescreenPlansBtn,
+                                      style: GoogleFonts.roboto(
+                                        color: Kcolors.mainBlack,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold
+                                      )
+                                    )
+                                )
+                              ]
+                            ),
+                          )
+                      ),
                     ),
 
                     // settings and more button

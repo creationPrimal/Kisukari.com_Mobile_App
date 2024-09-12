@@ -25,7 +25,7 @@ class _SeleTestMainState extends State<SeleTestMain> {
   void initState() {
     super.initState();
     // Start the 5-second delay
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 1), () {
       setState(() {
         _isLoading = false; // Updates the state to stop loading when becomes false but when true it loads
       });

@@ -6,8 +6,11 @@ import 'package:kisukari_mobile_app/constants/backbutton.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kimages.dart';
+import 'package:kisukari_mobile_app/providers/languagesettings.dart';
 /* import 'package:kisukari_mobile_app/main.dart'; */
 import 'package:kisukari_mobile_app/utils/settings/settings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
@@ -29,7 +32,6 @@ class _LanguageScreenState extends State<LanguageScreen> {
   void initState() {
     super.initState();
     _initializeitems();
-    /* _setLanguage(context); */
   }
 
   void _initializeitems() {
@@ -42,17 +44,6 @@ class _LanguageScreenState extends State<LanguageScreen> {
       ];
   }
 
- /*  void _setLanguage(BuildContext context) {
-    String savedLanguage = data.read('language') ?? Settings.language;
-    if(savedLanguage == 'Swahili') {
-      MyApp.setLocale(context, const Locale('sw', ''));
-    } else if (savedLanguage == 'English') {
-      MyApp.setLocale(context, const Locale('en', ''));
-    } else {MyApp.setLocale(context, const Locale('sw', ''));}
-    setState(() {});
-  }
-
- */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +52,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
         backgroundColor: Kcolors.mainWhite,
         elevation: 0.0,
         leading: const CustomBackButton(),
-        title: Text('Choose Language',
+        title: Text(AppLocalizations.of(context)!.chooseLanguage,
           style: GoogleFonts.roboto(
             fontSize: 22.0,
             fontWeight: FontWeight.bold,
@@ -69,53 +60,57 @@ class _LanguageScreenState extends State<LanguageScreen> {
         )
         ),
       ),
-      body: ListView.builder(
-        itemCount: _items.length,
-        itemBuilder: (context, index) {
-          return Container(
-            margin: const EdgeInsets.only(top: 20, left:15, right: 15),
-            decoration: BoxDecoration(
-              color: Kcolors.lightBlue,
-              borderRadius: BorderRadius.circular(50)
-            ),
-            child: CheckboxListTile(
-              checkColor: Colors.white,
-              activeColor: Colors.red,
-              splashRadius: 0.5,
-              checkboxShape: CircleBorder(
-                side: BorderSide(color: Kcolors.mainRed, width: 2.0)
-              ),
-              title: Text(
-                _items[index].name,
-                style: GoogleFonts.roboto(
-                  fontSize: 20,
-                ), 
-              ),
-              value: _items[index].isChecked,
-              onChanged: (value) {
-                /* _setLanguage(context); */
-                setState(() {
-                    // Uncheck all items
-                    for (var item in _items) {
-                      item.isChecked = false;
-                    }
-                    // Check the selected item
-                    _items[index].isChecked = true;
-
-                    // Save the selected language to local storage
-                    data.write('language', _items[index].name);
-                    
-                    
-                  });
-              },
-              secondary: Image.asset(_items[index].iconPath,
-              height: 20,
-              width: 35,
-              fit: BoxFit.cover,
-              ), // Add icon image here
-            ),
+      body: Consumer<StorageProvider>(
+        builder: (context, storageProvider, child) {
+          return ListView.builder(
+            itemCount: _items.length,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: const EdgeInsets.only(top: 20, left:15, right: 15),
+                decoration: BoxDecoration(
+                  color: Kcolors.lightBlue,
+                  borderRadius: BorderRadius.circular(50)
+                ),
+                child: CheckboxListTile(
+                  checkColor: Colors.white,
+                  activeColor: Colors.red,
+                  splashRadius: 0.5,
+                  checkboxShape: CircleBorder(
+                    side: BorderSide(color: Kcolors.mainRed, width: 2.0)
+                  ),
+                  title: Text(
+                    _items[index].name,
+                    style: GoogleFonts.roboto(
+                      fontSize: 20,
+                    ), 
+                  ),
+                  value: _items[index].isChecked,
+                  onChanged: (value) {
+                    /* _setLanguage(context); */
+                    setState(() {
+                        // Uncheck all items
+                        for (var item in _items) {
+                          item.isChecked = false;
+                        }
+                        // Check the selected item
+                        _items[index].isChecked = true;
+          
+                        // Save the selected language to local storage
+                        storageProvider.saveData( _items[index].name);
+                        
+                        
+                      });
+                  },
+                  secondary: Image.asset(_items[index].iconPath,
+                  height: 20,
+                  width: 35,
+                  fit: BoxFit.cover,
+                  ), // Add icon image here
+                ),
+              );
+            },
           );
-        },
+        }
       ),
     );
   }

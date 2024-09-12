@@ -80,7 +80,7 @@ class _SelfTestResultScreenState extends State<SelfTestResultScreen> {
                                 ),
                                 child: IconButton(
                                 onPressed: () {
-                                  Navigator.pop(context);
+                                  Navigator.popUntil(context, (route) => route.isFirst);
                                 },
                                 icon: Icon(Icons.arrow_back_ios,
                                 color: Kcolors.mainBlack

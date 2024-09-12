@@ -466,7 +466,7 @@ class _AppProfileState extends State<AppProfile> {
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
                                           
-                                            Text(
+                                              Text(
                                                 AppLocalizations.of(context)!.email,
                                                 style: GoogleFonts.roboto(
                                                   color: Kcolors.mainBlack,
@@ -474,6 +474,7 @@ class _AppProfileState extends State<AppProfile> {
                                                   fontWeight: FontWeight.w600
                                                 )
                                               ),
+
                                               SizedBox(
                                                 width: 230,
                                                 child: Text(
@@ -505,38 +506,41 @@ class _AppProfileState extends State<AppProfile> {
                                   
                                       // email
                                       SizedBox(
-                                                            child:
-                                                              Padding(
-                                  padding: const EdgeInsets.all(8),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                  
-                                     Text(
-                                        AppLocalizations.of(context)!.phonenumber,
-                                        style: GoogleFonts.roboto(
-                                          color: Kcolors.mainBlack,
-                                          fontSize: 19,
-                                          fontWeight: FontWeight.w600
+                                      child:
+                                        Padding(
+                                        padding: const EdgeInsets.all(8),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                        
+                                              Text(
+                                                AppLocalizations.of(context)!.phonenumber,
+                                                style: GoogleFonts.roboto(
+                                                  color: Kcolors.mainBlack,
+                                                  fontSize: 19,
+                                                  fontWeight: FontWeight.w600
+                                                )
+                                              ),
+                                              
+                                              SizedBox(
+                                                width: 200,
+                                                child: Text(
+                                                  '+255',
+                                                  textAlign: TextAlign.end,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  style: GoogleFonts.roboto(
+                                                    color: Kcolors.darkBlue,
+                                                    fontSize: 19,
+                                                    fontWeight: FontWeight.bold
+                                                  )
+                                                ),
+                                              ),
+
+
+                                            ]
+                                          ),
                                         )
                                       ),
-                                      SizedBox(
-                                        width: 200,
-                                        child: Text(
-                                          '+255',
-                                          textAlign: TextAlign.end,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: GoogleFonts.roboto(
-                                            color: Kcolors.darkBlue,
-                                            fontSize: 19,
-                                            fontWeight: FontWeight.bold
-                                          )
-                                        ),
-                                      ),
-                                    ]
-                                  ),
-                                                              )
-                                                            ),
                                   
                                   
                                   
