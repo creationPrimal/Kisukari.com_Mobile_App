@@ -226,55 +226,6 @@ class AppSettings extends StatelessWidget {
                                 ),
                               ),
 
-
-                              //TODO: Add permission settings to get data from phone
-                              
-                              // app permissions
-                              GestureDetector(
-                                onTap: () {
-                                  
-                                },
-                                child: SizedBox(
-                                  width: MediaQuery.of(context).size.width,
-                                  child:
-                                    Padding(
-                                      padding: const EdgeInsets.all(8),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                      
-                                        SizedBox(
-                                          width: MediaQuery.of(context).size.width * 0.7,
-                                          child: Text(
-                                              AppLocalizations.of(context)!.appSettingsPermissions,
-                                              style: GoogleFonts.roboto(
-                                                color: Kcolors.mainBlack,
-                                                fontSize: 19,
-                                                fontWeight: FontWeight.w600
-                                              )
-                                            ),
-                                        ),
-                                          Icon(Icons.arrow_forward_ios_outlined,
-                                          size: 20,
-                                          color: Kcolors.darkBlue,
-                                          )
-                                        ]
-                                      ),
-                                    )
-                                  ),
-                              ),
-                          
-                              //line bar
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8, right: 8, top: 4, bottom: 4),
-                                child: Container(
-                                  height: 2,
-                                  decoration: BoxDecoration(
-                                    color: Kcolors.lightGrey.withOpacity(0.5)
-                                  )
-                                ),
-                              ),
-
                               // language
                               GestureDetector(
                                 onTap: () {

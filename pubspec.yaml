@@ -56,16 +56,20 @@ dependencies:
   flutter_slidable: ^3.1.1
   cached_network_image: ^3.4.1
   shimmer: ^3.0.0
+  image_gallery_saver: ^2.0.3
   permission_handler: ^11.3.1
+  flutter_image_slideshow: ^0.1.6
+  flutter_local_notifications: ^17.2.2
+  get_time_ago: ^1.3.1
+  flutter_dotenv: ^5.0.2
+  carousel_slider: ^5.0.0
+  ionicons: ^0.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_dotenv: ^5.0.2
-  flutter_image_slideshow: ^0.1.6
-  get_time_ago: ^1.3.1
-  flutter_local_notifications: ^17.2.1+2
-  ionicons: ^0.2.2
+  
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -93,6 +97,20 @@ flutter:
     - assets/app_images/splashimage.jpg
     - assets/app_images/kisukari.com-logo.png
     - assets/app_images/selftestbg.png
+    - assets/app_images/profileimageIcon.jpg
+    - assets/app_images/riskassessmentimage.jpg
+    - assets/app_images/woundsbg.jpg
+    - assets/app_images/kukaguamiguu.jpg
+    - assets/app_images/kuoshamiguu.jpg
+    - assets/app_images/kukaushamiguu.jpg
+    - assets/app_images/kukatakucha.jpg
+    - assets/app_images/viatuvisivyobana.jpg
+    - assets/app_images/kutembeapeku.jpg
+    - assets/app_images/kupakamafuta.jpg
+    - assets/app_images/majimotokuoshamiguu.jpg
+    - assets/app_images/miguukwenyemoto.jpg
+    - assets/app_images/mentalbg.jpg
+    - assets/app_images/hearttestbg.jpg
     - assets/app_icons/Flag_of_Tanzania.png
     - assets/app_icons/Flag_of_America.png
     - assets/app_icons/test.png
@@ -155,6 +173,25 @@ flutter:
     - assets/app_icons/tigologo.png
     - assets/app_icons/fastingcolored.png
     - assets/app_icons/deletecoloredicon.png
+    - assets/app_icons/smartwatchicon.png
+    - assets/app_icons/brain.png
+    - assets/app_icons/heartasses.jpg
+    - assets/app_icons/nerves.png
+    - assets/app_icons/kukatwamguu_ndio.jpg
+    - assets/app_icons/kukatwamguu_hapana.jpg
+    - assets/app_icons/vidonda_ndio.jpg
+    - assets/app_icons/vidonda_hapana.jpg
+    - assets/app_icons/ugonjwafigo_ndio.jpg
+    - assets/app_icons/ugonjwafigo_hapana.jpg
+    - assets/app_icons/ganzi_ndio.jpg
+    - assets/app_icons/ganzi_hapana.jpg
+    - assets/app_icons/mishipa_ndio.jpg
+    - assets/app_icons/mishipa_hapana.jpg
+    - assets/app_icons/ulemavu_ndio.jpg
+    - assets/app_icons/ulemavu_hapana.jpg
+    - assets/app_icons/sugu_ndio.jpg
+    - assets/app_icons/sugu_hapana.jpg
+    - assets/app_icons/mr.kisukariicon.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

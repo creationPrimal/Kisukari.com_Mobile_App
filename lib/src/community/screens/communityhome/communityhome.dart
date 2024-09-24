@@ -16,25 +16,24 @@ class CommunityHome extends StatefulWidget {
 class _CommunityHomeState extends State<CommunityHome> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 7, left: 15, bottom: 15, right: 15),
-      child:
-        const SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget> [
-              
-              // posting div
-              PostingWidget(),
-          
-              // posts
-              CommunityPosts(),
-          
-            ]
-          ),
-        ),
-        
+    return Scaffold(
+      body: 
+        CustomScrollView(
+          slivers: [
+            //top bar
+            SliverToBoxAdapter(
+              child:
+                Container(
+                  margin: const EdgeInsets.only(top: 10, bottom: 10, right: 15, left: 15),
+                  child: const PostingWidget()
+                ),
+              ),
+
+            // posts
+            const CommunityPosts(),
+
+          ]
+        )
     );
   }
 }

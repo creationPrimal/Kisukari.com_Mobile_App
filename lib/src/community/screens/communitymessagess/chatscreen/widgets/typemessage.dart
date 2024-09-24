@@ -1,9 +1,10 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:kisukari_mobile_app/providers/chatfontsize.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -27,6 +28,42 @@ class _TypeMessageState extends State<TypeMessage> {
     _messageController.clear();
   }
 
+  // upload image
+  Future<void> _pickImage(Permission permission, ImageSource source) async {
+  // Check the current permission status
+  var status = await permission.status;
+
+  if (status.isGranted) {
+    // If permission is already granted, pick the image
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: source);
+
+    if (pickedFile != null) {
+      // Handle the selected image file here
+      // ignore: avoid_print
+      print("Image selected: ${pickedFile.path}");
+    }
+  } else {
+    // Request permission if not granted
+    var newStatus = await permission.request();
+
+    if (newStatus.isGranted) {
+      // Permission granted after request; pick the image
+      final picker = ImagePicker();
+      final pickedFile = await picker.pickImage(source: source);
+
+      if (pickedFile != null) {
+        // Handle the selected image file here
+        // ignore: avoid_print
+        print("Image selected: ${pickedFile.path}");
+      }
+    } else {
+      // Handle the case when permission is denied or permanently denied
+      openAppSettings(); // Opens settings to configure permissions
+    }
+  }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +79,12 @@ class _TypeMessageState extends State<TypeMessage> {
             Padding(
               padding: const EdgeInsets.only(right: 0.0),
               child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.attach_file,
+                onPressed: () {
+                   () async {
+                    _pickImage(Permission.camera, ImageSource.gallery);
+                  };
+                },
+                icon: Icon(Icons.camera_alt,
                 size: 25,
                 color: Kcolors.mainBlack
                 ),

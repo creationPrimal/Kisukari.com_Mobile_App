@@ -109,55 +109,27 @@ class _PostContentState extends State<PostContent> {
                           child: 
                             Row(
                               children: [
-                                Icon(Icons.add_photo_alternate_outlined,
-                                color: Kcolors.mainGreen,
-                                size: 20,
+                                Icon(Icons.camera_alt,
+                                color: Kcolors.mainBlack,
+                                size: 30,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    AppLocalizations.of(context)!.communityPhoto,
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainBlack,
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold
-                                    )
-                                  ),
-                                )
+                                // Padding(
+                                //   padding: const EdgeInsets.only(left: 8.0),
+                                //   child: Text(
+                                //     AppLocalizations.of(context)!.communityPhoto,
+                                //     style: GoogleFonts.roboto(
+                                //       color: Kcolors.mainBlack,
+                                //       fontSize: 19,
+                                //       fontWeight: FontWeight.bold
+                                //     )
+                                //   ),
+                                // )
                               ]
                             ),
                             
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          //logic for uploading a video
-                        },
-                        child: Container(
-                          margin: const EdgeInsets.only(right: 20),
-                          child: 
-                            Row(
-                              children: [
-                                Icon(Icons.videocam_outlined,
-                                color: Kcolors.mainGold,
-                                size: 25,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    AppLocalizations.of(context)!.communityVideo,
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainBlack,
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold
-                                    )
-                                  ),
-                                )
-                              ]
-                            ),
-                            
-                        ),
-                      )
+                      
                     ]
                   ),
                 )

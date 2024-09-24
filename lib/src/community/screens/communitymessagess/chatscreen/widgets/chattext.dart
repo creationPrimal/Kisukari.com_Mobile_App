@@ -52,7 +52,7 @@ class _ChatTextState extends State<ChatText> {
                                 'Lorem ipsum dolor sit amet, consectetur  consequat eu commodo diam. ',
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
-                                  fontSize: Provider.of<ChatFontSize>(context, listen: true).x,
+                                  fontSize: Provider.of<ChatFontSize>(context).x,
                                   height: 1.2
                                 )
                               ),
@@ -112,7 +112,7 @@ class _ChatTextState extends State<ChatText> {
                                 'Lorem ipsum dolor sit amet, Vestibulum  eu commodo diam. ',
                                 style: GoogleFonts.roboto(
                                   color: Kcolors.mainBlack,
-                                  fontSize: Provider.of<ChatFontSize>(context, listen: false).x,
+                                  fontSize: Provider.of<ChatFontSize>(context).x,
                                   height: 1.2
                                 )
                               ),

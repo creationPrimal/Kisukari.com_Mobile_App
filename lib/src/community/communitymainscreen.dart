@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:kisukari_mobile_app/src/community/screens/communityfavs/communityfavs.dart';
 import 'package:kisukari_mobile_app/src/community/screens/communityfriends/communityfriends.dart';
@@ -65,125 +66,137 @@ class _CommunityScreenState extends State<CommunityScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Kcolors.mainWhite,
       appBar: AppBar(
-        backgroundColor: Kcolors.mainWhite,
-        scrolledUnderElevation: 0.0,
+        centerTitle: true,
+        leadingWidth: 70,
+        toolbarHeight: 50,
+        leading: 
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0),
+            child: CircleAvatar(
+              radius: 18,
+              foregroundImage: const AssetImage('assets/app_images/yassinimage.png'), // Use cached network image
+              backgroundImage: AssetImage(Kimages.profileimageIcon),
+            ),
+          ),
         title: 
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: 105,
-                  alignment: Alignment.centerLeft,
-                  child: CircleAvatar(
-                    radius: 20,
-                    backgroundImage: const AssetImage('assets/app_images/yassinimage.png'), // Use cached network image
-                    backgroundColor: Kcolors.lightBlue,
-                  ),
-                ),
-                 
-                Container(
-                  width: 105,
-                  alignment: Alignment.center,
-                  height: 22,
-                  child:
-                    Text(
-                      AppLocalizations.of(context)!.navbarCommunity,
-                      style: GoogleFonts.roboto(
-                        color: Kcolors.mainRed,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      )
-                    )
-                ),
-
-                SizedBox(
-                  child:
-                    Row(
-                  children: [
-                    SizedBox(
-                      width: 40,
-                      height: 40,
-                      child: 
-                        badges.Badge(
-                          badgeAnimation: const badges.BadgeAnimation.slide(),
-                          badgeContent: Text('13',
-                          style: GoogleFonts.roboto(
-                            color: Kcolors.mainWhite,
-                            fontSize: 10,
-                          )
-                          ),
-                          position: badges.BadgePosition.topEnd(top: 0, end: -5),
-                          badgeStyle: badges.BadgeStyle(
-                            padding: const EdgeInsets.all(3),
-                            badgeColor: Kcolors.darkBlue,
-                          ),
-                          child: 
-                          IconButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, communitymessages);
-                            },
-                            icon:
-                              const Icon(Icons.message_outlined,
-                            size: 25,
-                            ),
-                          ),
-                        )
-                    ),
-                    SizedBox(
-                      width: 40,
-                      height: 40,
-                      child: 
-                        badges.Badge(
-                          badgeAnimation: const badges.BadgeAnimation.slide(
-                            toAnimate: true,
-                          ),
-                          badgeContent: Text('13',
-                          style: GoogleFonts.roboto(
-                            color: Kcolors.mainWhite,
-                            fontSize: 10,
-                          )
-                          ),
-                          position: badges.BadgePosition.topEnd(top: 0, end: -5),
-                          badgeStyle: badges.BadgeStyle(
-                            padding: const EdgeInsets.all(3),
-                            badgeColor: Kcolors.mainRed,
-                          ),
-                          child: 
-                          IconButton(
-                            onPressed: () {},
-                            icon:
-                              const Icon(Icons.notifications_outlined,
-                            size: 27,
-                            ),
-                          ),
-                        )
-                    ),
-                    Container(
-                      width: 20,
-                      height: 40,
-                      margin: const EdgeInsets.only(left: 5),
-                      child: 
-                        IconButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            padding: WidgetStateProperty.all(const EdgeInsets.all(0))
-                          ),
-                          icon:
-                            const Icon(Icons.more_vert,
-                            size: 30,
-                            )
-                        ),
-                    )
-                  ],
-                )
-                )
-              ]
+          Text(
+            AppLocalizations.of(context)!.navbarCommunity,
+            style: GoogleFonts.roboto(
+              color: Kcolors.mainRed,
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
             )
           ),
+        actions: [
+          // chats
+          SizedBox(
+            width: 40,
+            height: 40,
+            child: 
+              badges.Badge(
+                badgeAnimation: const badges.BadgeAnimation.slide(),
+                badgeContent: Text('13',
+                style: GoogleFonts.roboto(
+                  color: Kcolors.mainWhite,
+                  fontSize: 10,
+                )
+                ),
+                position: badges.BadgePosition.topEnd(top: 0, end: -5),
+                badgeStyle: badges.BadgeStyle(
+                  padding: const EdgeInsets.all(3),
+                  badgeColor: Kcolors.darkBlue,
+                ),
+                child: 
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, communitymessages);
+                  },
+                  icon:
+                    const Icon(Icons.message_outlined,
+                  size: 25,
+                  ),
+                ),
+              )
+          ),
+
+          // notifications
+          SizedBox(
+            width: 40,
+            height: 40,
+            child: 
+              badges.Badge(
+                badgeAnimation: const badges.BadgeAnimation.slide(
+                  toAnimate: true,
+                ),
+                badgeContent: Text('13',
+                style: GoogleFonts.roboto(
+                  color: Kcolors.mainWhite,
+                  fontSize: 10,
+                )
+                ),
+                position: badges.BadgePosition.topEnd(top: 0, end: -5),
+                badgeStyle: badges.BadgeStyle(
+                  padding: const EdgeInsets.all(3),
+                  badgeColor: Kcolors.mainRed,
+                ),
+                child: 
+                IconButton(
+                  onPressed: () {},
+                  icon:
+                    const Icon(Icons.notifications_outlined,
+                  size: 27,
+                  ),
+                ),
+              )
+          ),
+                    
+          // options  
+          PopupMenuButton<String>(
+            onSelected: (String value) {
+              // do something
+            },
+            padding: const EdgeInsets.all(0),
+            color: Kcolors.darkBlue,
+            itemBuilder: (BuildContext context) {
+              return [
+                // Define the menu items
+                PopupMenuItem<String>(
+                  value: 'option_1',
+                  child: Text('Option 1',
+                  style: GoogleFonts.roboto(
+                    color: Kcolors.mainWhite,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  )
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'option_2',
+                  child: Text('Option 2',
+                  style: GoogleFonts.roboto(
+                    color: Kcolors.mainWhite,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  )
+                  ),
+                ),
+              ];
+            },
+            child:
+              Container(
+              width: 20, height: 40, margin: const EdgeInsets.only(left: 5, right: 15),
+              child: 
+                IconButton(
+                  onPressed: null,
+                  style: ButtonStyle(
+                    padding: WidgetStateProperty.all(const EdgeInsets.all(0))
+                  ),
+                  icon: Icon(Icons.more_vert, size: 30, color: Kcolors.mainBlack)
+                ),
+            )
+          ),
+        ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(70),
           child:

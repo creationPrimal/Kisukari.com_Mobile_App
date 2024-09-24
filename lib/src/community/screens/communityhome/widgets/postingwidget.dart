@@ -28,82 +28,36 @@ class PostingWidget extends StatelessWidget {
             child:
               Column(
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: Kcolors.mainWhite,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child:
-                      Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: Text(
-                          AppLocalizations.of(context)!.textTyping,
-                          style: GoogleFonts.roboto(
-                            fontSize: 18,
-                            color: Kcolors.mainGrey,
-                            fontWeight: FontWeight.w600,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(Icons.edit_note,
+                        color: Kcolors.mainBlack,
+                        size: 33,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.78,
+                        decoration: BoxDecoration(
+                          color: Kcolors.mainWhite,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child:
+                          Padding(
+                            padding: const EdgeInsets.all(6.0),
+                            child: Text(
+                              AppLocalizations.of(context)!.textTyping,
+                              style: GoogleFonts.roboto(
+                                fontSize: 18,
+                                color: Kcolors.mainGrey,
+                                fontWeight: FontWeight.w600,
+                              )
+                            
+                            ),
                           )
-                        
-                        ),
-                      )
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(right: 20),
-                          child: 
-                            Row(
-                              children: [
-                                Icon(Icons.add_photo_alternate_outlined,
-                                color: Kcolors.mainGreen,
-                                size: 20,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    AppLocalizations.of(context)!.communityPhoto,
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainBlack,
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold
-                                    )
-                                  ),
-                                )
-                              ]
-                            ),
-                            
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(right: 20),
-                          child: 
-                            Row(
-                              children: [
-                                Icon(Icons.videocam_outlined,
-                                color: Kcolors.mainGold,
-                                size: 25,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    AppLocalizations.of(context)!.communityVideo,
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainBlack,
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold
-                                    )
-                                  ),
-                                )
-                              ]
-                            ),
-                            
-                        )
-                      ]
-                    ),
-                  )
-                  
+                 
                 ]
               )
           )

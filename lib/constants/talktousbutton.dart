@@ -57,7 +57,7 @@ class TalkToUsBtn extends StatelessWidget {
                           AppLocalizations.of(context)!.homeHospitalcustomerservicetitle,
                           style: GoogleFonts.roboto(
                             color: Kcolors.mainBlack,
-                            fontSize: 16,
+                            fontSize: 19,
                             height: 1.2,
                             fontWeight: FontWeight.bold
                           )

@@ -16,4 +16,5 @@ class Kcolors {
   static Color lightGreen = const Color.fromRGBO(102, 183, 110, 1);
   static Color mainGold = const Color.fromRGBO(255, 168, 0, 1);
   static Color mainBlue = const Color.fromARGB(255, 0, 81, 255);
+  static Color woundsSkinColor = const Color.fromARGB(255, 175, 88, 0);
 }

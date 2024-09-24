@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/backbutton.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
+import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:kisukari_mobile_app/providers/chatfontsize.dart';
 import 'package:kisukari_mobile_app/src/community/screens/communitymessagess/chatscreen/widgets/chattext.dart';
@@ -67,8 +68,8 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
                             children: [
                               CircleAvatar(
                                 radius: 20,
-                                backgroundImage: CachedNetworkImageProvider(userprofileimg),
-                                backgroundColor: Kcolors.lightBlue,
+                                foregroundImage: CachedNetworkImageProvider(userprofileimg),
+                                backgroundImage: AssetImage(Kimages.profileimageIcon),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 8.0),

@@ -8,6 +8,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:permission_handler/permission_handler.dart';
 // import 'dart:typed_data';
 // import 'package:image_gallery_saver/image_gallery_saver.dart';
+// import 'package:dio/dio.dart';
+
 class ChatImageFull extends StatefulWidget {
 
   final String chatimage;
@@ -23,6 +25,16 @@ class _ChatImageFullState extends State<ChatImageFull> {
     var status = await permission.status;
 
     if(status.isGranted) {
+      
+    // var response = await Dio().get( widget.chatimage,
+    //     options: Options(responseType: ResponseType.bytes));
+    // final result = await ImageGallerySaver.saveImage(
+    //     Uint8List.fromList(response.data),
+    //     quality: 60,
+    //     name: "hello");
+    // print(result);
+    // print('')
+  
       // ignore: avoid_print
       print('access granted');
     } else if (status.isDenied) {

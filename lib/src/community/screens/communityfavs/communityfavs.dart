@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:kisukari_mobile_app/src/community/screens/communityfavs/widgets/savedposts.dart';
 
 class CommunityFavs extends StatefulWidget {
   const CommunityFavs({super.key});
@@ -13,13 +14,12 @@ class CommunityFavs extends StatefulWidget {
 class _CommunityFavsState extends State<CommunityFavs> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(15),
-      child:
-        const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Favs')
+    return const Scaffold(
+      body:
+        CustomScrollView(
+          slivers: [
+            // saved posts
+            SavedCommunityPosts(),
           ]
         )
     );

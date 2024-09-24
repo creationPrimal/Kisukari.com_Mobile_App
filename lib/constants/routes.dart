@@ -16,15 +16,11 @@ import 'package:kisukari_mobile_app/src/more_section/appprofile/widgets/profiled
 import 'package:kisukari_mobile_app/src/more_section/intermittentfasting/fastingmainscreen.dart';
 import 'package:kisukari_mobile_app/src/more_section/plansandgoals/plansedit.dart';
 import 'package:kisukari_mobile_app/src/more_section/plansandgoals/plansmain.dart';
-import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_eighthscreen.dart';
-import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_fifthscreen.dart';
-import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_fourthscreen.dart';
-import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_results.dart';
-import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_secondscreen.dart';
-import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_seventhscreen.dart';
-import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_sixthscreen.dart';
-import 'package:kisukari_mobile_app/src/more_section/self_test/selftest_thirdscreen.dart';
-import 'package:kisukari_mobile_app/src/more_section/self_test/selftestmain.dart';
+import 'package:kisukari_mobile_app/src/more_section/riskassesment/heartdiseaseassessment/heartassessment.dart';
+import 'package:kisukari_mobile_app/src/more_section/riskassesment/mentalassessment/mentalassessment.dart';
+import 'package:kisukari_mobile_app/src/more_section/riskassesment/riskassessmentmain.dart';
+import 'package:kisukari_mobile_app/src/more_section/riskassesment/sugarassessment/sugarassessment.dart';
+import 'package:kisukari_mobile_app/src/more_section/riskassesment/woundassessment/woundassessmentmain.dart';
 import 'package:kisukari_mobile_app/src/notifications/homenotifications.dart';
 import 'package:kisukari_mobile_app/src/reportsmain/widgets/customizereport.dart';
 import 'package:kisukari_mobile_app/src/more_section/subscriptions/paymentoptions.dart';
@@ -57,17 +53,14 @@ const String fastingmainscreen = '/fastingmainscreen';
 const String mainprofilescreen = '/mainprofilescreen';
 const String profiledetailsset = '/profiledetailsset';
 const String appsettings = '/appsettings';
-const String selftest = '/selftest';
 
-// selftest screens
-const String selftestsecondscreen = '/selftestsecondscreen';
-const String selftestthirdscreen = '/selftestthirdscreen';
-const String selftestfourthscreen = '/selftestfourthscreen';
-const String selftestfifthscreen = '/selftestfifthscreen';
-const String selftestsixthscreen = '/selftestsixthscreen';
-const String selftestseventhscreen = '/selftestseventhscreen';
-const String selftesteighthscreen = '/selftesteighthscreen';
-const String selftestresultsscreen = '/selftestresultsscreen';
+// risk assessment
+const String riskassessment = '/riskassessment';
+const String sugarassessment = '/sugarassessment';
+const String woundstest = '/woundstest';
+const String mentalassessment = '/mentalassessment';
+const String heartassessment = '/heartassessment';
+
 
 // other
 const String plansmain = '/plansmain';
@@ -91,14 +84,17 @@ class Routes {
       splashScreen: (context) => const SplashScreen(),
       languageScreen: (context) => const LanguageScreen(),
       introPage: (context) => const IntroPage(),
+      // sign in
       login: (context) => const LogIn(),
       signup: (context) => const SignUp(),
       otpscreen: (context) => const OTPScreen(),
+      // introduction
       firstintrodialog: (context) => const FirstIntroDialog(),
       secondintrodialog: (context) => const SecondScreenTypes(),
       thirdintrodialog: (context) => const ThirdDiabeticmedications(),
       fourthintrodialog: (context) => const FourthOtherdiseases(),
       resultsintrodialog: (context) => const IntroResults(),
+      //main 
       mainentrypoint: (context) => const MainEntryPoint(),
       customizereport: (context) => const CustomizeReport(),
       homenotifications: (context) => const HomeNotifications(),
@@ -108,17 +104,16 @@ class Routes {
       mainprofilescreen: (context) => const AppProfile(),
       profiledetailsset: (context) => const ProfileHeightPicker(),
       appsettings: (context) => const AppSettings(),
-      selftest: (context) => const SeleTestMain(),
-      selftestsecondscreen: (context) => const SelfTestSecondScreen(),
-      selftestthirdscreen: (context) => const SelfTestThirdScreen(),
-      selftestfourthscreen: (context) => const SelfTestFourthScreen(),
-      selftestfifthscreen: (context) => const SelfTestFifthScreen(),
-      selftestsixthscreen: (context) => const SelfTestSixthScreen(),
-      selftestseventhscreen: (context) => const SelfTestSeventhScreen(),
-      selftesteighthscreen: (context) => const SelfTestEighthScreen(),
-      selftestresultsscreen: (context) => const SelfTestResultScreen(),
+      riskassessment: (context) => const RiskAssessment(),
+      // Risk assessment
+      sugarassessment: (context) => const SugarAssessmentMain(),
+      woundstest: (context) => const WoundAssessmentMain(),
+      mentalassessment: (context) => const MentalAssessmentMain(),
+      heartassessment: (context) => const HeartAssessmentMain(),
+      // plans & goals
       plansmain: (context) => const PlansMain(),
       plansedit: (context) => const PlansEdit(),
+      // community
       postcontent: (context) => const PostContent(),
       communitymessages: (context) => const CommunityMessages(),
       communitychat: (context) => const CommunityChatScreen(),

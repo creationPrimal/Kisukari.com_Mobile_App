@@ -4,6 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
+import 'package:kisukari_mobile_app/providers/communityproviders.dart';
+import 'package:provider/provider.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CommunityFriends extends StatefulWidget {
   const CommunityFriends({super.key});
@@ -73,10 +76,19 @@ class FriendTile extends StatefulWidget {
 class _FriendTileState extends State<FriendTile> {
   @override
   Widget build(BuildContext context) {
+
+    final loadingProvider = Provider.of<FriendsLoader>(context);
+    if (loadingProvider.isLoading) {
+      loadingProvider.loadPosts();
+    }
+
     return SizedBox(
       child:
         Column(
           children: [
+            loadingProvider.isLoading ? // show loader
+            const FriendsLoaderShimmer()
+            : // show content
             Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10.0),
               child: Container(
@@ -137,7 +149,9 @@ class _FriendTileState extends State<FriendTile> {
                   ),
               ),
             ),
-            Container(
+            
+            // separating line
+            Container( 
               height: 2,
               decoration: BoxDecoration(
                 color: Kcolors.lightGrey.withOpacity(0.4),
@@ -145,6 +159,96 @@ class _FriendTileState extends State<FriendTile> {
             )
           ]
         ),
+    );
+  }
+}
+
+
+
+
+
+// shimmer loader for friends
+class FriendsLoaderShimmer extends StatelessWidget {
+  const FriendsLoaderShimmer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Shimmer.fromColors(
+      baseColor: Colors.grey.shade300,
+      highlightColor: Colors.grey.shade100,
+      child:
+        Padding(
+      padding: const EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 10.0),
+      child: Container(
+        margin: const EdgeInsets.all(0),
+        child: 
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                child:
+                  Row(
+                    children: [
+                      Container(
+                        height: 66,
+                        width: 66,
+                        decoration: BoxDecoration(
+                          color: Kcolors.mainGrey,
+                          borderRadius: BorderRadius.circular(40)
+                        )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 20,
+                              width: 190,
+                              decoration: BoxDecoration(
+                                color: Kcolors.mainGrey,
+                                borderRadius: BorderRadius.circular(15)
+                              )
+                            )
+                          ],
+                        ),
+                      ),
+                      
+                    ]
+                  )
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Container(
+                      height: 30,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Kcolors.mainGrey,
+                        borderRadius: BorderRadius.circular(20)
+                      )
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Container(
+                      height: 30,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Kcolors.mainGrey,
+                        borderRadius: BorderRadius.circular(20)
+                      )
+                    ),
+                  ),
+                ],
+              )
+              
+            ]
+          ),
+      ),
+    ),
+
     );
   }
 }

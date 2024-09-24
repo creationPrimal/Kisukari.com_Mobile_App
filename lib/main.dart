@@ -7,6 +7,7 @@ import 'package:kisukari_mobile_app/providers/reportduration.dart';
 import 'package:kisukari_mobile_app/src/splashscreen/splashscreen.dart';
 import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:kisukari_mobile_app/utils/loaders/mainloader.dart';
 import 'package:kisukari_mobile_app/utils/settings/settings.dart';
 import 'package:provider/provider.dart';
 
@@ -43,6 +44,12 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(create: (context) => ReportDuration()),
         ChangeNotifierProvider(create: (context) => ChatFontSize()),
         ChangeNotifierProvider(create: (context) => ChatImagesLoader()),
+        ChangeNotifierProvider(create: (context) => ChatVideosLoader()),
+        ChangeNotifierProvider(create: (context) => ChatLoaderProvider()),
+        ChangeNotifierProvider(create: (context) => HomePostLoader()),
+        ChangeNotifierProvider(create: (context) => PostFontSize()),
+        ChangeNotifierProvider(create: (context) => GroupsLoader()),
+        ChangeNotifierProvider(create: (context) => FriendsLoader()),
       ],
       child: Builder(
         builder: (context) {
@@ -89,20 +96,6 @@ class _MyAppState extends State<MyApp> {
 }
 
 
-// Initial loader to initialize app
-
-class InitialLoader extends StatelessWidget {
-  const InitialLoader({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: CircularProgressIndicator()
-      )
-    );
-  }
-}
 
 
 
