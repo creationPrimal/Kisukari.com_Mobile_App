@@ -13,9 +13,9 @@ class MoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Kcolors.lightGrey.withOpacity(0.4),
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        backgroundColor: Kcolors.lightGrey.withOpacity(0.4),
+        backgroundColor: Colors.grey.shade200,
         scrolledUnderElevation: 0.0,
         title: 
           SizedBox(

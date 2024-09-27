@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HomeClinicCounter extends StatelessWidget {
@@ -296,85 +297,90 @@ class HomeClinicCounter extends StatelessWidget {
                         )
                     ),
 
-                    Container(
-                      margin: const EdgeInsets.only(top: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            height: 50,
-                            width: MediaQuery.of(context).size.width * 0.6,
-                            decoration: BoxDecoration(
-                              color: Kcolors.lightGrey,
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(25),
-                                bottomLeft: Radius.circular(25),
-                                topRight: Radius.circular(8),
-                                bottomRight: Radius.circular(8),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, mrkisukari);
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width * 0.6,
+                              decoration: BoxDecoration(
+                                color: Kcolors.lightGrey,
+                                borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(25),
+                                  bottomLeft: Radius.circular(25),
+                                  topRight: Radius.circular(8),
+                                  bottomRight: Radius.circular(8),
+                                ),
                               ),
-                            ),
-                            child: 
-                              Padding(
-                                padding: const EdgeInsets.only(right: 4.0, left:4),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      height: 35,
-                                      width: 35,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
-                                      child:
-                                        ClipRRect(
+                              child: 
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 4.0, left:4),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        height: 35,
+                                        width: 35,
+                                        decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(50),
-                                          child: Image.asset(Kicons.customerserviceIcon,
-                                          fit: BoxFit.cover
-                                          ),
-                                        )
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 4.0),
-                                      child: SizedBox(
-                                        width: MediaQuery.of(context).size.width * 0.48,
-                                        child: Text(
-                                          AppLocalizations.of(context)!.homeHospitalcustomerservicetitle,
-                                          style: GoogleFonts.roboto(
-                                            color: Kcolors.mainBlack,
-                                            fontSize: 16,
-                                            height: 1.2,
-                                            fontWeight: FontWeight.bold
-                                          )
                                         ),
+                                        child:
+                                          ClipRRect(
+                                            borderRadius: BorderRadius.circular(50),
+                                            child: Image.asset(Kicons.customerserviceIcon,
+                                            fit: BoxFit.cover
+                                            ),
+                                          )
                                       ),
-                                    )
-                                  ]
-                                ),
-                              )
-                          ),
-
-                          Container(
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: Kcolors.mainRed,
-                              borderRadius: BorderRadius.circular(60)
-                            ),
-                            child: 
-                              Padding(
-                                padding: const EdgeInsets.only(right: 9.0, left: 9),
-                                child: Center(
-                                  child: Text(
-                                    AppLocalizations.of(context)!.hometalktous,
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainWhite,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold
-                                    )
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 4.0),
+                                        child: SizedBox(
+                                          width: MediaQuery.of(context).size.width * 0.48,
+                                          child: Text(
+                                            AppLocalizations.of(context)!.homeHospitalcustomerservicetitle,
+                                            style: GoogleFonts.roboto(
+                                              color: Kcolors.mainBlack,
+                                              fontSize: 19,
+                                              height: 1.2,
+                                              fontWeight: FontWeight.bold
+                                            )
+                                          ),
+                                        ),
+                                      )
+                                    ]
                                   ),
-                                ),
-                              )
-                          )
-                        ],
+                                )
+                            ),
+                      
+                            Container(
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Kcolors.mainRed,
+                                borderRadius: BorderRadius.circular(60)
+                              ),
+                              child: 
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 9.0, left: 9),
+                                  child: Center(
+                                    child: Text(
+                                      AppLocalizations.of(context)!.hometalktous,
+                                      style: GoogleFonts.roboto(
+                                        color: Kcolors.mainWhite,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.bold
+                                      )
+                                    ),
+                                  ),
+                                )
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],

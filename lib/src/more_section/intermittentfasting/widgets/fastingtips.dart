@@ -27,7 +27,7 @@ class FastingTips extends StatelessWidget {
                       AppLocalizations.of(context)!.fastingTipstopTitle,
                       style: GoogleFonts.roboto(
                         color: Kcolors.mainBlack,
-                        fontSize: 20,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                       )
                     ),
@@ -38,7 +38,7 @@ class FastingTips extends StatelessWidget {
                           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                           style: GoogleFonts.roboto(
                             color: Kcolors.mainBlack,
-                            fontSize: 15,
+                            fontSize: 19,
                             height: 1.2,
                           )
                         )
@@ -61,7 +61,7 @@ class FastingTips extends StatelessWidget {
                         AppLocalizations.of(context)!.fastingTipssubTitle,
                         style: GoogleFonts.roboto(
                           color: Kcolors.mainBlack,
-                          fontSize: 20,
+                          fontSize: 22,
                           fontWeight: FontWeight.bold,
                         )
                       ),
@@ -97,23 +97,27 @@ class FastingTips extends StatelessWidget {
 
                                   ),
                                   SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.73,
+                                    width: MediaQuery.of(context).size.width * 0.75,
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           'Getting Started',
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
                                           style: GoogleFonts.roboto(
                                             color: Kcolors.darkBlue,
-                                            fontSize: 17,
+                                            fontSize: 18,
                                             fontWeight: FontWeight.w700,
                                           )
                                         ),
                                         Text(
-                                          'Lorem ipsum dolor sit amet, consectetur elit. Sed do eiusmod tempor incididunt ut labore ',
+                                          'Lorem ipsum dolor sit amet, consectetur elit. Sed do eiusmod temp incididunt ut labore ',
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
                                           style: GoogleFonts.roboto(
                                             color: Kcolors.mainBlack,
-                                            fontSize: 15,
+                                            fontSize: 18,
                                             height: 1.2,
                                           )
                                         ),

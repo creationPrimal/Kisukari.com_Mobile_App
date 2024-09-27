@@ -7,12 +7,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:kisukari_mobile_app/constants/kimages.dart';
+import 'package:kisukari_mobile_app/providers/homeproviders.dart';
+import 'package:provider/provider.dart';
 
 class LogEntries extends StatefulWidget {
   
-  final VoidCallback hideOverlay;
-
-  const LogEntries({super.key, required this.hideOverlay});
+  const LogEntries({super.key});
 
   @override
   State<LogEntries> createState() => _LogEntriesState();
@@ -48,6 +48,9 @@ class _LogEntriesState extends State<LogEntries> {
 
   @override
   Widget build(BuildContext context) {
+
+    final overlayProvider = Provider.of<DialogOverlayBtn>(context);
+
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
       child: Container(
@@ -142,7 +145,7 @@ class _LogEntriesState extends State<LogEntries> {
                         Container(
                           margin: const EdgeInsets.only(bottom: 40),
                           child: IconButton(
-                            onPressed: widget.hideOverlay,
+                            onPressed: () {overlayProvider.hideOverlay();},
                             icon: 
                               Icon(Icons.cancel_rounded,
                               size: 60,

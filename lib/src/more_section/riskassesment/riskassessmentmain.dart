@@ -283,7 +283,7 @@ class _RiskAssessmentState extends State<RiskAssessment> {
                                                         Padding(
                                                           padding: const EdgeInsets.only(top: 8.0),
                                                           child: Text(
-                                                            AppLocalizations.of(context)!.risktestassessmentbody,
+                                                            AppLocalizations.of(context)!.risktestheart,
                                                             textAlign: TextAlign.center,
                                                             style: GoogleFonts.roboto(
                                                               color: Kcolors.mainBlack, fontSize: 19, height: 1.2, fontWeight: FontWeight.w700,

@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kisukari_mobile_app/constants/backbutton.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:kisukari_mobile_app/src/more_section/appprofile/widgets/profiledatepicker.dart';
 import 'package:kisukari_mobile_app/src/more_section/appprofile/widgets/profilegender.dart';
@@ -26,26 +27,21 @@ class _AppProfileState extends State<AppProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+      backgroundColor: Colors.grey.shade200,
         scrolledUnderElevation: 0.0,
         leading: const CustomBackButton(),
+        centerTitle: true,
         title:  
-          SizedBox(
-          width: MediaQuery.of(context).size.width * 0.65,
-          child: 
-            Center(
-              child: Text(
-                AppLocalizations.of(context)!.appProfileTitle,
-                style: GoogleFonts.roboto(
-                  color: Kcolors.mainRed,
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold
-                )
-              ),
+          Text(
+            AppLocalizations.of(context)!.appProfileTitle,
+            style: GoogleFonts.roboto(
+              color: Kcolors.mainRed,
+              fontSize: 22,
+              fontWeight: FontWeight.bold
             )
-        ),
+          ),
       ),
       body: 
         SingleChildScrollView(
@@ -83,8 +79,8 @@ class _AppProfileState extends State<AppProfile> {
                               child: 
                               CircleAvatar(
                                 radius: 50,
-                                backgroundImage: AssetImage(profileimageUrl), // use cached network image
-                                backgroundColor: Kcolors.lightBlue,
+                                foregroundImage: AssetImage(profileimageUrl), // use cached network image
+                                backgroundImage: AssetImage(Kimages.profileimageIcon),
                               ),
                             ),
                           ),
@@ -96,25 +92,33 @@ class _AppProfileState extends State<AppProfile> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  'Username',
-                                  style: GoogleFonts.roboto(
-                                    color: Kcolors.mainBlack,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold
-                                  )
+                                ConstrainedBox(
+                                  constraints: const BoxConstraints(
+                                    maxWidth: 250,
+                                  ),
+                                  child: IntrinsicWidth(
+                                    child: Text(
+                                      'Username',
+                                      overflow: TextOverflow.ellipsis,
+                                      style: GoogleFonts.roboto(
+                                        color: Kcolors.mainBlack,
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold
+                                      )
+                                    ),
+                                  ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: Icon(Icons.verified_sharp,
-                                  size: 20,
+                                  size: 21,
                                   color: Kcolors.mainBlue,
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: Icon(Icons.edit,
-                                  size: 20,
+                                  size: 21,
                                   color: Kcolors.mainBlack,
                                   ),
                                 )

@@ -192,6 +192,18 @@ flutter:
     - assets/app_icons/sugu_ndio.jpg
     - assets/app_icons/sugu_hapana.jpg
     - assets/app_icons/mr.kisukariicon.jpg
+    - assets/app_icons/tipsicon.jpg
+    - assets/app_icons/protocalsicon.png
+    - assets/app_icons/risktesticon.png
+    - assets/app_icons/recomicon.png
+    - assets/app_icons/consulticon.png
+    - assets/app_icons/clappingicon.jpg
+    - assets/app_icons/24hoursicon.jpg
+    - assets/app_icons/articlesicon.jpg
+    - assets/app_icons/discussionicon.jpg
+    - assets/app_icons/quizicon.jpg
+    - assets/app_icons/readicon.jpg
+    - assets/app_icons/learnmainicon.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

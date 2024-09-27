@@ -17,9 +17,9 @@ class AppSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+      backgroundColor: Colors.grey.shade200,
         scrolledUnderElevation: 0.0,
         leading: const CustomBackButton(),
         title:  
@@ -79,7 +79,7 @@ class AppSettings extends StatelessWidget {
                                               AppLocalizations.of(context)!.appProfileTitle,
                                               style: GoogleFonts.roboto(
                                                 color: Kcolors.mainBlack,
-                                                fontSize: 19,
+                                                fontSize: 21,
                                                 fontWeight: FontWeight.w600
                                               )
                                             ),
@@ -131,7 +131,7 @@ class AppSettings extends StatelessWidget {
                                           AppLocalizations.of(context)!.gender,
                                           style: GoogleFonts.roboto(
                                             color: Kcolors.mainBlack,
-                                            fontSize: 19,
+                                            fontSize: 21,
                                             fontWeight: FontWeight.w600
                                           )
                                         ),
@@ -139,7 +139,7 @@ class AppSettings extends StatelessWidget {
                                           'Me',
                                           style: GoogleFonts.roboto(
                                             color: Kcolors.darkBlue,
-                                            fontSize: 19,
+                                            fontSize: 21,
                                             fontWeight: FontWeight.bold
                                           )
                                         ),
@@ -200,7 +200,7 @@ class AppSettings extends StatelessWidget {
                                               AppLocalizations.of(context)!.homenotifications,
                                               style: GoogleFonts.roboto(
                                                 color: Kcolors.mainBlack,
-                                                fontSize: 19,
+                                                fontSize: 21,
                                                 fontWeight: FontWeight.w600
                                               )
                                             ),
@@ -246,7 +246,7 @@ class AppSettings extends StatelessWidget {
                                               AppLocalizations.of(context)!.language,
                                               style: GoogleFonts.roboto(
                                                 color: Kcolors.mainBlack,
-                                                fontSize: 19,
+                                                fontSize: 21,
                                                 fontWeight: FontWeight.w600
                                               )
                                             ),
@@ -312,7 +312,7 @@ class AppSettings extends StatelessWidget {
                                               AppLocalizations.of(context)!.appSettingssubscriptionstatus,
                                               style: GoogleFonts.roboto(
                                                 color: Kcolors.mainBlack,
-                                                fontSize: 19,
+                                                fontSize: 21,
                                                 fontWeight: FontWeight.w600
                                               )
                                             ),
@@ -386,7 +386,7 @@ class AppSettings extends StatelessWidget {
                                           AppLocalizations.of(context)!.morescreenLogOutBtn,
                                           style: GoogleFonts.roboto(
                                             color: Kcolors.mainBlack,
-                                            fontSize: 19,
+                                            fontSize: 21,
                                             fontWeight: FontWeight.w600
                                           )
                                         ),
@@ -431,7 +431,7 @@ class AppSettings extends StatelessWidget {
                                           AppLocalizations.of(context)!.appSettingsdeleteaccount,
                                           style: GoogleFonts.roboto(
                                             color: Kcolors.mainBlack,
-                                            fontSize: 19,
+                                            fontSize: 21,
                                             fontWeight: FontWeight.w600
                                           )
                                         ),

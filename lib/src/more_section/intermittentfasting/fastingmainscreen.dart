@@ -11,6 +11,7 @@ import 'package:kisukari_mobile_app/src/more_section/intermittentfasting/widgets
 import 'package:kisukari_mobile_app/src/more_section/intermittentfasting/widgets/fastingtopcontent.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:kisukari_mobile_app/src/reportsmain/reports/fasting_report/fastingmainreport.dart';
+import 'package:kisukari_mobile_app/constants/kimages.dart';
 
 class FastingMainScreen extends StatefulWidget {
   const FastingMainScreen({super.key});
@@ -35,11 +36,11 @@ class _FastingMainScreenState extends State<FastingMainScreen> {
       isToggled = 0;
     });
   }
-  void _alignRightRedLine() { // right side
-    setState(() {
-      isToggled = 2;
-    });
-  }
+  // void _alignRightRedLine() { // right side
+  //   setState(() {
+  //     isToggled = 2;
+  //   });
+  // }
 
 
 
@@ -51,20 +52,15 @@ class _FastingMainScreenState extends State<FastingMainScreen> {
       backgroundColor: Kcolors.mainWhite,
       scrolledUnderElevation: 0.0,
         leading: const CustomBackButton(),
+        centerTitle: true,
         title: 
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.65,
-            child: 
-              Center(
-                child: Text(
-                  AppLocalizations.of(context)!.fastingMainTitle,
-                  style: GoogleFonts.roboto(
-                    color: Kcolors.mainRed,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  )
-                ),
-              ),
+          Text(
+            AppLocalizations.of(context)!.fastingMainTitle,
+            style: GoogleFonts.roboto(
+              color: Kcolors.mainRed,
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            )
           ),
       ),
       body:
@@ -90,20 +86,31 @@ class _FastingMainScreenState extends State<FastingMainScreen> {
                             onTap: () {
                               _alignLeftRedLine(); // display protocals and align the red line to it
                             },
-                            child: SizedBox(
+                            child: Container(
                               height: 50,
-                              width: MediaQuery.of(context).size.width * 0.3,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(color: Kcolors.mainWhite),
                               child: 
                                 Center(
                                   child:
-                                    Text(
-                                    AppLocalizations.of(context)!.fastingProtocals,
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainBlack,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          height: 35, width: 35,
+                                          margin: const EdgeInsets.only(right: 10),
+                                          child: Image.asset(Kicons.protocalsicon, fit: BoxFit.cover)
+                                        ),
+                                        Text(
+                                          AppLocalizations.of(context)!.fastingProtocals,
+                                          style: GoogleFonts.roboto(
+                                            color: Kcolors.mainBlack,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          )
+                                        ),
+                                      ]
                                     )
-                                  ),
                                 ),
                             ),
                           ),
@@ -112,45 +119,55 @@ class _FastingMainScreenState extends State<FastingMainScreen> {
                             onTap: () {
                               _alignCenterRedLine(); // display tips and align the red line to it
                             },
-                            child: SizedBox(
+                            child: Container(
                               height: 50,
-                              width: MediaQuery.of(context).size.width * 0.3,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              decoration: BoxDecoration(color: Kcolors.mainWhite),
                               child: 
                                 Center(
                                   child:
-                                    Text(
-                                    AppLocalizations.of(context)!.fastingTips,
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainBlack,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
+                                    Row(
+                                      children: [
+                                         Container(
+                                          height: 35, width: 35,
+                                          margin: const EdgeInsets.only(right: 10),
+                                          child: Image.asset(Kicons.tipsicon, fit: BoxFit.cover)
+                                        ),
+                                        Text(
+                                          AppLocalizations.of(context)!.fastingTips,
+                                          style: GoogleFonts.roboto(
+                                            color: Kcolors.mainBlack,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                          )
+                                        ),
+                                      ]
                                     )
-                                  ),
                                 ),
                             ),
                           ),
-                          // button 3
-                          GestureDetector(
-                            onTap: () {
-                              _alignRightRedLine(); // display report and align the red line to it
-                            },
-                            child: SizedBox(
-                              height: 50,
-                              width: MediaQuery.of(context).size.width * 0.3,
-                              child: 
-                                Center(
-                                  child:
-                                    Text(
-                                    AppLocalizations.of(context)!.homeFastreport,
-                                    style: GoogleFonts.roboto(
-                                      color: Kcolors.mainBlack,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                    )
-                                  ),
-                                ),
-                            ),
-                          )
+                          // button 3 for report
+                          // GestureDetector(
+                          //   onTap: () {
+                          //     _alignRightRedLine(); // display report and align the red line to it
+                          //   },
+                          //   child: SizedBox(
+                          //     height: 50,
+                          //     width: MediaQuery.of(context).size.width * 0.3,
+                          //     child: 
+                          //       Center(
+                          //         child:
+                          //           Text(
+                          //           AppLocalizations.of(context)!.homeFastreport,
+                          //           style: GoogleFonts.roboto(
+                          //             color: Kcolors.mainBlack,
+                          //             fontSize: 20,
+                          //             fontWeight: FontWeight.bold,
+                          //           )
+                          //         ),
+                          //       ),
+                          //   ),
+                          // )
                         ]
                       ),
                       Container(
@@ -162,12 +179,14 @@ class _FastingMainScreenState extends State<FastingMainScreen> {
                           children: [
                             Expanded(
                               child: AnimatedAlign(
-                                alignment: isToggled == 0 ? Alignment.centerLeft : isToggled == 1 ? Alignment.center : isToggled == 2 ? Alignment.centerRight : Alignment.centerLeft,
-                                duration: const Duration(milliseconds: 200),
+                                alignment: 
+                                  // isToggled == 0 ? Alignment.centerLeft : isToggled == 1 ? Alignment.centerRight : isToggled == 2 ? Alignment.centerRight : Alignment.centerLeft, // this for all three togles + report
+                                  isToggled == 0 ? Alignment.centerLeft :  Alignment.centerRight, // this for two toggles only protocals and tips
+                                duration: const Duration(milliseconds: 300),
                                 curve: Curves.easeIn,
                                 child: Container(
                                   height: 3,
-                                  width: MediaQuery.of(context).size.width * 0.3,
+                                  width: MediaQuery.of(context).size.width * 0.45,
                                   decoration: BoxDecoration(
                                     color: Kcolors.mainRed,
                                   )

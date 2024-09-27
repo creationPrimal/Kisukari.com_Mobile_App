@@ -19,7 +19,7 @@ class WoundsResultsPage extends StatefulWidget {
 
 class _WoundsResultsPageState extends State<WoundsResultsPage> {
 
-  bool _isLoading = true;
+  bool _isLoading = true; // loader
 
   @override
   void initState() {
@@ -31,7 +31,7 @@ class _WoundsResultsPageState extends State<WoundsResultsPage> {
     setState(() {
       _isLoading = false;
     });
-  }
+  } 
 
 
 
@@ -56,7 +56,7 @@ class _WoundsResultsPageState extends State<WoundsResultsPage> {
           ),
         )
       )
-      :
+      : // after loading
       SingleChildScrollView(
       scrollDirection: Axis.vertical, 
       child: Container(

@@ -111,7 +111,20 @@ class Kicons {
   static String ulemavuhapana = '${iconsRoute}ulemavu_hapana.jpg';
   static String suguNdio = '${iconsRoute}sugu_ndio.jpg';
   static String suguhapana = '${iconsRoute}sugu_hapana.jpg';
+  static String tipsicon = '${iconsRoute}tipsicon.jpg';
+  static String protocalsicon = '${iconsRoute}protocalsicon.png';
+  static String consulticon = '${iconsRoute}consulticon.png';
+  static String risktesticon = '${iconsRoute}risktesticon.png';
+  static String recomicon = '${iconsRoute}recomicon.png';
+  static String dayhoursicon = '${iconsRoute}24hoursicon.jpg';
+  static String clappingicon = '${iconsRoute}clappingicon.jpg';
+  static String articlesicon = '${iconsRoute}articlesicon.jpg';
+  static String discussionicon = '${iconsRoute}discussionicon.jpg';
+  static String quizicon = '${iconsRoute}quizicon.jpg';
+  static String readicon = '${iconsRoute}readicon.jpg';
+  static String learnmainicon = '${iconsRoute}learnmainicon.jpg';
  
-  
+ 
+
     
 }

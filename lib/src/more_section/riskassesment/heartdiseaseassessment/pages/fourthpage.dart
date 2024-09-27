@@ -18,12 +18,42 @@ class HeartFourthPage extends StatefulWidget {
 
 class _HeartFourthPageState extends State<HeartFourthPage> {
 
+  bool _isLoading = true; // loader
+
+  @override
+  void initState() {
+    loadData();
+    super.initState();
+  }
+  Future<void> loadData() async {
+    await Future.delayed(const Duration(seconds: 3));
+    setState(() {
+      _isLoading = false;
+    });
+  }
  
 
   @override
   Widget build(BuildContext context) {
 
-    return SingleChildScrollView(
+    return 
+    _isLoading ? // display loader first
+    Center(
+      child: Container(
+        height: 60,
+        width: 60,
+        decoration: const BoxDecoration(
+          color: Colors.transparent,
+        ),
+        child: CircularProgressIndicator(
+          color: Kcolors.mainWhite,
+          strokeWidth: 7,
+          
+        ),
+      )
+    )
+    : // after loading
+    SingleChildScrollView(
       scrollDirection: Axis.vertical, 
       child: Container(
         margin: const EdgeInsets.only(top: 5, bottom: 35),

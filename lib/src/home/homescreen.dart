@@ -10,23 +10,39 @@ import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:kisukari_mobile_app/constants/routes.dart';
+import 'package:kisukari_mobile_app/providers/homeproviders.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/autogreetings.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/homeclinic.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/homefasting.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/homeremindertabs.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/homereportgraphs.dart';
+import 'package:kisukari_mobile_app/src/home/widgets/hometopbuttons.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/medicationreadings.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/scrollcalender.dart';
 import 'package:kisukari_mobile_app/src/home/widgets/sugartopreadings.dart';
+import 'package:kisukari_mobile_app/src/home/widgets/log_entries.dart';
+import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+
+  @override
   Widget build(BuildContext context) {
+
+    final overlayProvider = Provider.of<DialogOverlayBtn>(context);
+
     return Scaffold(
       backgroundColor: Kcolors.mainWhite,
-      appBar: AppBar(
+      appBar: 
+      !overlayProvider.overlay ? // if dialog buttons overlay is not visible 
+      AppBar(
         backgroundColor: Kcolors.mainWhite,
         scrolledUnderElevation: 0.0,
         title: 
@@ -77,43 +93,83 @@ class HomeScreen extends StatelessWidget {
               ]
             )
           )
-      ),
+      )
+      :
+      null,
       body: 
-        SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Container(
-            margin: const EdgeInsets.all(15),
-            child: const Column(
-              children: [
-
-                // scroll calender
-                ScrollCalender(),
-
-                //auto greetings
-                AutoGreetings(),
-
-                // top main readings
-                Sugartopreadings(),
-
-                //medication readings (pills , insulin, excercise and more)
-                HomeMedicationReadings(),
-
-                //reminder tabs
-                HomeReminderTabs(),
-
-                //TODO: Add pop up notifications here
-
-                //weekly report graphs
-                HomeReportGraphs(),
-
-                // clinic days counter
-                HomeClinicCounter(),
-
-                //intermittent fasting
-                HomeFasting(),
-              ]
-            )
-          )
+        Stack(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Container(
+                margin: const EdgeInsets.all(15),
+                child: const Column(
+                  children: [
+            
+                    // scroll calender
+                    ScrollCalender(),
+            
+                    //auto greetings
+                    AutoGreetings(),
+            
+                    // top buttons, consultation, doctors recom and risk assessment
+                    HomeTopButtons(),
+            
+                    // top main readings
+                    Sugartopreadings(),
+            
+                    //medication readings (pills , insulin, excercise and more)
+                    HomeMedicationReadings(),
+            
+                    //reminder tabs
+                    HomeReminderTabs(),
+            
+                    //TODO: Add pop up notifications here
+            
+                    //weekly report graphs
+                    HomeReportGraphs(),
+            
+                    // clinic days counter
+                    HomeClinicCounter(),
+            
+                    //intermittent fasting
+                    HomeFasting(),
+                  ]
+                )
+              )
+            ),
+            // dialog display button
+            Positioned(
+              bottom: 20,
+              right: 15,
+              child:
+                GestureDetector(
+                  onTap: () {
+                    overlayProvider.showOverlay();
+                  },
+                  child: Container(
+                  decoration: BoxDecoration(
+                    color: Kcolors.mainWhite,
+                    borderRadius: BorderRadius.circular(30)
+                  ),
+                  child: Center(
+                    child: Icon(Icons.add_circle_sharp,
+                    size: 48,
+                    color: Kcolors.mainRed,
+                    ),
+                  )
+                  ),
+                ),
+            ),
+            // overlay
+            if (overlayProvider.overlay) // if it is active to display
+              const Positioned.fill(
+                child: Opacity(
+                  opacity: 1,
+                  child: LogEntries(),
+                ),
+              ),
+          ],
         )
     );
   }

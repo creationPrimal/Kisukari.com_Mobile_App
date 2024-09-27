@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:kisukari_mobile_app/providers/chatfontsize.dart';
 import 'package:kisukari_mobile_app/providers/communityproviders.dart';
+import 'package:kisukari_mobile_app/providers/homeproviders.dart';
 import 'package:kisukari_mobile_app/providers/languagesettings.dart';
 import 'package:kisukari_mobile_app/providers/reportduration.dart';
 import 'package:kisukari_mobile_app/src/splashscreen/splashscreen.dart';
@@ -50,6 +51,7 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(create: (context) => PostFontSize()),
         ChangeNotifierProvider(create: (context) => GroupsLoader()),
         ChangeNotifierProvider(create: (context) => FriendsLoader()),
+        ChangeNotifierProvider(create: (context) => DialogOverlayBtn()),
       ],
       child: Builder(
         builder: (context) {

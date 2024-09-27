@@ -79,7 +79,7 @@ class _FastingProtocalsState extends State<FastingProtocals> {
                           AppLocalizations.of(context)!.fastingFastingProtocals,
                           style: GoogleFonts.roboto(
                             color: Kcolors.mainBlack,
-                            fontSize: 20,
+                            fontSize: 22,
                             fontWeight: FontWeight.bold,
                           )
                         )
@@ -92,7 +92,7 @@ class _FastingProtocalsState extends State<FastingProtocals> {
                           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                           style: GoogleFonts.roboto(
                             color: Kcolors.mainBlack,
-                            fontSize: 15,
+                            fontSize: 20,
                             height: 1.2,
                           )
                         )
@@ -111,7 +111,7 @@ class _FastingProtocalsState extends State<FastingProtocals> {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 15.0),
                         child: Container(
-                          height: 100,
+                          height: 110,
                           decoration: BoxDecoration(
                             color: Kcolors.mainWhite,
                             borderRadius: BorderRadius.circular(10), 
@@ -136,13 +136,13 @@ class _FastingProtocalsState extends State<FastingProtocals> {
                               ),
                               child:
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 8, bottom: 8, right: 8, left: 15),
+                                  padding: const EdgeInsets.only(top: 8, bottom: 8, right: 8, left: 10),
                                   child: Row(
                                     children: [
 
                                       Container(
-                                        width: 55,
-                                        height: 55,
+                                        width: 60,
+                                        height: 60,
                                         decoration: BoxDecoration(
                                           color: btn.rangecolor,
                                           borderRadius: BorderRadius.circular(8),
@@ -166,7 +166,7 @@ class _FastingProtocalsState extends State<FastingProtocals> {
                                                     AppLocalizations.of(context)!.homeFasthours,
                                                     style: GoogleFonts.roboto(
                                                       color: Kcolors.mainBlack,
-                                                      fontSize: 14,
+                                                      fontSize: 15,
                                                       fontWeight: FontWeight.w600,
                                                       height: 1,
                                                     )
@@ -177,7 +177,7 @@ class _FastingProtocalsState extends State<FastingProtocals> {
                                       ),
 
                                       Container(
-                                        width: MediaQuery.of(context).size.width * 0.62,
+                                        width: MediaQuery.of(context).size.width * 0.65,
                                         margin: const EdgeInsets.only(left: 15),
                                         child:
                                           Column(
@@ -188,16 +188,16 @@ class _FastingProtocalsState extends State<FastingProtocals> {
                                                 btn.typerange,
                                                 style: GoogleFonts.roboto(
                                                   color: Kcolors.mainBlack,
-                                                  fontSize: 16,
+                                                  fontSize: 19,
                                                   fontWeight: FontWeight.bold,
                                                   height: 1,
                                                 )
                                               ),
                                                Text(
-                                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore',
+                                                'Lorem ipsum dolor sit amet, consecte adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore',
                                                 style: GoogleFonts.roboto(
                                                   color: Kcolors.mainBlack,
-                                                  fontSize: 15,
+                                                  fontSize: 17,
                                                   height: 1.1,
                                                 )
                                               ),

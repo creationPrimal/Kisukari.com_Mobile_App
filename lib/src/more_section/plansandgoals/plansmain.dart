@@ -13,11 +13,12 @@ class PlansMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+        backgroundColor: Colors.grey.shade200,
         scrolledUnderElevation: 0.0,
         leading: const CustomBackButton(),
+        centerTitle: true,
         title: 
           Text(
             AppLocalizations.of(context)!.goalsHead,

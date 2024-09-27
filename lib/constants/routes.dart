@@ -10,10 +10,19 @@ import 'package:kisukari_mobile_app/src/introduction/intro.dart';
 import 'package:kisukari_mobile_app/src/introduction/resultsscreen/introresults.dart';
 import 'package:kisukari_mobile_app/src/introduction/secondscreen/second_diabetestypes.dart';
 import 'package:kisukari_mobile_app/src/introduction/thirdscreen/third_diabeticmedications.dart';
+import 'package:kisukari_mobile_app/src/learning/learning/pages/articlepage.dart';
 import 'package:kisukari_mobile_app/src/more_section/appprofile/app_profile.dart';
 import 'package:kisukari_mobile_app/src/more_section/appsettings/appsettings.dart';
 import 'package:kisukari_mobile_app/src/more_section/appprofile/widgets/profiledetailsset.dart';
+import 'package:kisukari_mobile_app/src/more_section/doctorsrecommendations/congrats.dart';
+import 'package:kisukari_mobile_app/src/more_section/doctorsrecommendations/doctorsrecom.dart';
+import 'package:kisukari_mobile_app/src/more_section/doctorsrecommendations/recomreports.dart';
 import 'package:kisukari_mobile_app/src/more_section/intermittentfasting/fastingmainscreen.dart';
+import 'package:kisukari_mobile_app/src/more_section/mr_kisukari/mr_kisukari.dart';
+import 'package:kisukari_mobile_app/src/more_section/onlineconsultation/congrats.dart';
+import 'package:kisukari_mobile_app/src/more_section/onlineconsultation/consultation.dart';
+import 'package:kisukari_mobile_app/src/more_section/onlineconsultation/dateselection.dart';
+import 'package:kisukari_mobile_app/src/more_section/onlineconsultation/myconsultations.dart';
 import 'package:kisukari_mobile_app/src/more_section/plansandgoals/plansedit.dart';
 import 'package:kisukari_mobile_app/src/more_section/plansandgoals/plansmain.dart';
 import 'package:kisukari_mobile_app/src/more_section/riskassesment/heartdiseaseassessment/heartassessment.dart';
@@ -65,12 +74,23 @@ const String heartassessment = '/heartassessment';
 // other
 const String plansmain = '/plansmain';
 const String plansedit = '/plansedit';
+const String mrkisukari = '/mrkisukari';
+const String doctorsrecom = '/doctorsrecom';
+const String doctorsrecomcongrats = '/doctorsrecomcongrats';
+const String recomreports = '/recomreports';
+const String consultation = '/consultation';
+const String consultationdate = '/consultationdate';
+const String consultationcongrats = '/consultationcongrats';
+const String myconsultations = '/myconsultations';
 
 // community
 const String postcontent = '/postcontent';
 const String communitymessages = '/communitymessages';
 const String communitychat = '/communitychat';
 const String communitychatinfo = '/communitychatinfo';
+
+// learn
+const String articlepage = 'articlepage/';
 
 
 
@@ -104,8 +124,16 @@ class Routes {
       mainprofilescreen: (context) => const AppProfile(),
       profiledetailsset: (context) => const ProfileHeightPicker(),
       appsettings: (context) => const AppSettings(),
-      riskassessment: (context) => const RiskAssessment(),
+      mrkisukari: (context) => const MrKisukariScreen(),
+      doctorsrecom: (context) => const DoctorsRecommendations(),
+      doctorsrecomcongrats: (context) => const DoctorsRecommendationsCongrats(),
+      recomreports: (context) => const RecommendationReports(),
+      consultation: (context) => const OnlineConsultation(),
+      consultationdate: (context) => const ConsultationDate(),
+      consultationcongrats: (context) => const ConsultationCongrats(),
+      myconsultations: (context) => const MyConsultations(),
       // Risk assessment
+      riskassessment: (context) => const RiskAssessment(),
       sugarassessment: (context) => const SugarAssessmentMain(),
       woundstest: (context) => const WoundAssessmentMain(),
       mentalassessment: (context) => const MentalAssessmentMain(),
@@ -118,6 +146,8 @@ class Routes {
       communitymessages: (context) => const CommunityMessages(),
       communitychat: (context) => const CommunityChatScreen(),
       communitychatinfo: (context) => const ChatInfo(),
+      // learn
+      articlepage: (context) => const ArticlePage(),
     };
   }
 }
