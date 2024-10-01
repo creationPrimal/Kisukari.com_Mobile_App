@@ -487,5 +487,17 @@
     "leartbtn1title" : "Let's learn",
     "leartbtn2title" : "Saved",
     "leartbtn3title" : "Quiz",
-    "articlewrittenby" : "Written by"
+    "articlewrittenby" : "Written by",
+    "articlearticles" : "Articles",
+    "articlediscussions" : "Discussions",
+    "articlecommunitytitle" : "This discussion can also be accessed from community section.",
+    "articleimportant" : "Important",
+    "articlesources" : "Sources",
+    "articlenextarticle" : "Next article",
+    "articlefontexpand" : "Increase font size",
+    "articlefontminimize" : "Decrease font size",
+    "articleactions" : "Actions",
+    "by" : "by",
+    "quizquestion" : "Question",
+    "quizexplanation" : "Explanation"
 }

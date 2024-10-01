@@ -106,7 +106,7 @@ class _CommunityChatScreenState extends State<CommunityChatScreen> {
                                   icon: Icon(Icons.format_size,
                                     color: Kcolors.mainBlack,
                                     size: 25,
-                                  )
+                                  ) 
                                 ),
                               );
                             }

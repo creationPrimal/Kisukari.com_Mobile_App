@@ -65,39 +65,22 @@ class _CommunityPostItemState extends State<CommunityPostItem> {
           ),
         actions: [
           // this button is to increase text font size and reduce
-        if (Provider.of<PostFontSize>(context).x == 20) // increases font
-          Consumer<PostFontSize>(
-            builder: (context, postFontSize, child) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 15.0),
-                child: IconButton(
-                  onPressed: () {
-                    fontSizeProvider.incrementFont(20);
-                  },
-                  icon: Icon(Icons.format_size,
-                    color: Kcolors.mainBlack,
-                    size: 25,
-                  )
-                ),
-              );
-            }
-          ),
-        if (Provider.of<PostFontSize>(context).x == 22) // decreases font
-          Consumer<PostFontSize>(
-            builder: (context, postFontSize, child) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 15.0),
-                child: IconButton(
-                  onPressed: () {
-                    fontSizeProvider.decrementFont(22);
-                  },
-                  icon: Icon(Icons.format_size,
-                    color: Kcolors.mainRed,
-                    size: 25,
-                  )
-                ),
-              );
-            }
+          Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: IconButton(
+              onPressed: () {
+                if(fontSizeProvider.x == 20) {
+                  fontSizeProvider.incrementFont(20); // increases font
+                } else {
+                  fontSizeProvider.decrementFont(22); // decreases font
+                }
+                
+              },
+              icon: Icon(Icons.format_size,
+                color: fontSizeProvider.x == 20 ? Kcolors.mainBlack : Kcolors.mainRed,
+                size: 25,
+              )
+            ),
           )
         ]
       ),

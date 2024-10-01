@@ -5,24 +5,24 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:kisukari_mobile_app/constants/kcolors.dart';
 import 'package:kisukari_mobile_app/constants/kimages.dart';
-import 'package:kisukari_mobile_app/providers/communityproviders.dart';
+import 'package:kisukari_mobile_app/providers/articleproviders.dart';
 import 'package:provider/provider.dart';
 
-class CommunityComments extends StatefulWidget {
-  const CommunityComments({super.key});
+class ArticleDiscussion extends StatefulWidget {
+  const ArticleDiscussion({super.key});
 
   @override
-  State<CommunityComments> createState() => _CommunityCommentsState();
+  State<ArticleDiscussion> createState() => _ArticleDiscussionState();
 }
 
-class _CommunityCommentsState extends State<CommunityComments> {
+class _ArticleDiscussionState extends State<ArticleDiscussion> {
 
   @override
   Widget build(BuildContext context) {
 
     
   // font size provider
-  final fontSizeProvider = Provider.of<PostFontSize>(context);
+  final fontSizeProvider = Provider.of<ArticleFontSize>(context);
 
 
     return SliverList(
@@ -157,7 +157,7 @@ class _CommunityCommentsState extends State<CommunityComments> {
               )
           );
         },
-        childCount: 2,
+        childCount: 1,
       )
     );
   }

@@ -487,5 +487,17 @@
     "leartbtn1title" : "Tujifunze",
     "leartbtn2title" : "Hifadhi",
     "leartbtn3title" : "Maswali",
-    "articlewrittenby" : "Imeandikwa na"
+    "articlewrittenby" : "Imeandikwa na",
+    "articlearticles" : "Makala",
+    "articlediscussions" : "Mijadala",
+    "articlecommunitytitle" : "Majadiliano haya pia yanaweza kupatikana kutoka sehemu ya jamii.",
+    "articleimportant" : "Muhimu",
+    "articlesources" : "Vyanzo",
+    "articlenextarticle" : "Makala inayofuata",
+    "articlefontexpand" : "Kuza maandishi",
+    "articlefontminimize" : "Punguza maandishi",
+    "articleactions" : "Vitendo",
+    "by" : "na",
+    "quizquestion" : "Swali",
+    "quizexplanation" : "Maelezo"
 }

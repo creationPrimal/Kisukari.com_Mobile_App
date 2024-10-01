@@ -8,6 +8,8 @@ import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:kisukari_mobile_app/src/learning/learning/learningscreen.dart';
+import 'package:kisukari_mobile_app/src/learning/quiz/quizmain.dart';
+import 'package:kisukari_mobile_app/src/learning/saved/savedarticles.dart';
 
 class LearnMain extends StatefulWidget {
   const LearnMain({super.key});
@@ -178,9 +180,19 @@ class _LearnMainState extends State<LearnMain> {
             //learn contents
             if (_btnlist[0].isActive) // if the first button is active
               const SliverToBoxAdapter(
-                child:
-                  LearningScreen()
+                child: LearningScreen()
               ),
+
+            // saved articles
+            if(_btnlist[1].isActive) // if the second button is active
+              const SavedArticles(),
+
+            // quiz
+            if(_btnlist[2].isActive) // if third button is active
+            const SliverToBoxAdapter(
+                child: QuizMain()
+              ),
+              
 
           ]
         )

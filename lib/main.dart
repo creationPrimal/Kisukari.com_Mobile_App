@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:kisukari_mobile_app/providers/articleproviders.dart';
 import 'package:kisukari_mobile_app/providers/chatfontsize.dart';
 import 'package:kisukari_mobile_app/providers/communityproviders.dart';
 import 'package:kisukari_mobile_app/providers/homeproviders.dart';
@@ -52,6 +53,7 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(create: (context) => GroupsLoader()),
         ChangeNotifierProvider(create: (context) => FriendsLoader()),
         ChangeNotifierProvider(create: (context) => DialogOverlayBtn()),
+        ChangeNotifierProvider(create: (context) => ArticleFontSize()),
       ],
       child: Builder(
         builder: (context) {

@@ -10,7 +10,8 @@ import 'package:kisukari_mobile_app/src/introduction/intro.dart';
 import 'package:kisukari_mobile_app/src/introduction/resultsscreen/introresults.dart';
 import 'package:kisukari_mobile_app/src/introduction/secondscreen/second_diabetestypes.dart';
 import 'package:kisukari_mobile_app/src/introduction/thirdscreen/third_diabeticmedications.dart';
-import 'package:kisukari_mobile_app/src/learning/learning/pages/articlepage.dart';
+import 'package:kisukari_mobile_app/src/learning/learning/pages/articlepage/articlepage.dart';
+import 'package:kisukari_mobile_app/src/learning/learning/pages/readarticle/readarticle.dart';
 import 'package:kisukari_mobile_app/src/more_section/appprofile/app_profile.dart';
 import 'package:kisukari_mobile_app/src/more_section/appsettings/appsettings.dart';
 import 'package:kisukari_mobile_app/src/more_section/appprofile/widgets/profiledetailsset.dart';
@@ -91,6 +92,7 @@ const String communitychatinfo = '/communitychatinfo';
 
 // learn
 const String articlepage = 'articlepage/';
+const String readarticle = 'readarticle/';
 
 
 
@@ -148,6 +150,7 @@ class Routes {
       communitychatinfo: (context) => const ChatInfo(),
       // learn
       articlepage: (context) => const ArticlePage(),
+      readarticle: (context) => const ReadArticle(),
     };
   }
 }

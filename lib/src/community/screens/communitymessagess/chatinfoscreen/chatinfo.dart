@@ -244,7 +244,7 @@ class _ChatInfoState extends State<ChatInfo> {
 
             // grid items images
             // if (isToggled == 0) // if images is picked
-            // const ChatInfoImages(), TODO: Uncomment this line when doing back end
+            // const ChatInfoImages(), Uncomment this line when doing back end
 
             // if (isToggled == 1) // if videos is picked
             //   const ChatInfoVideos(),

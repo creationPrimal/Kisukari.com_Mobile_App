@@ -12,7 +12,7 @@ class LearnFirstSlider {
 List<LearnFirstSlider> learnfirstslider = [
   LearnFirstSlider(
     title: "Goal setting",
-    image: "https://i.pinimg.com/236x/b5/d5/b3/b5d5b3970a7659ff6ff3606c4d5f2cb2.jpg"
+    image: "https://i.pinimg.com/236x/94/bf/0e/94bf0e7ff77ba37bb35e01f42a5e90af.jpg"
   ),
    LearnFirstSlider(
     title: "Low sugar diet",
@@ -42,15 +42,15 @@ class LearnSecondSlider {
 List<LearnSecondSlider> learnsecondslider = [
   LearnSecondSlider(
     title: "Goal setting",
-    image: "https://i.pinimg.com/236x/46/68/cb/4668cb596b4338235d8df73eaa8a7394.jpg"
+    image: "https://i.pinimg.com/236x/b8/ea/6e/b8ea6e4b3db76d2fa151fbd49029ee02.jpg"
   ),
    LearnSecondSlider(
     title: "Low sugar diet",
-    image: "https://i.pinimg.com/236x/29/13/c6/2913c668d0ebb0664ac85ac458177cbc.jpg"
+    image: "https://i.pinimg.com/236x/00/c7/9d/00c79d9bbfcdb79645f5dd97ca2ed8ff.jpg"
   ),
    LearnSecondSlider(
     title: "Goal setting",
-    image: "https://i.pinimg.com/236x/32/67/d3/3267d3004dd3a53b040069c8044b9961.jpg"
+    image: "https://i.pinimg.com/236x/a2/95/82/a29582b3bc65b473fb41ca2cc13b9365.jpg"
   ),
    LearnSecondSlider(
     title: "Low sugar diet",
@@ -71,7 +71,7 @@ class LearnThirdSlider {
 List<LearnThirdSlider> learnthirdslider = [
   LearnThirdSlider(
     title: "Goal setting",
-    image: "https://i.pinimg.com/236x/71/b4/1d/71b41d4b140e152884d9c8db1d4efe06.jpg"
+    image: "https://i.pinimg.com/236x/84/1c/14/841c143ba03e776005e16184803a1e05.jpg"
   ),
    LearnThirdSlider(
     title: "Low sugar diet",
@@ -79,7 +79,7 @@ List<LearnThirdSlider> learnthirdslider = [
   ),
    LearnThirdSlider(
     title: "Goal setting",
-    image: "https://i.pinimg.com/236x/15/0b/78/150b78f9f814778dae3741984342e56b.jpg"
+    image: "https://i.pinimg.com/236x/0d/ec/4a/0dec4a20e7de62f912b985b0026cf31e.jpg"
   ),
    LearnThirdSlider(
     title: "Low sugar diet",
