@@ -43,10 +43,10 @@ class _IntroResultsState extends State<IntroResults> {
         scrolledUnderElevation: 0.0,
         elevation: 0.0,
         leading: const CustomBackButton(),
+        centerTitle: true,
         title: 
           SizedBox(
             height: 22,
-            width: MediaQuery.of(context).size.width * 0.65,
             child:
             Image.asset(
               Kimages.logoTitle,
@@ -81,7 +81,7 @@ class _IntroResultsState extends State<IntroResults> {
                       AppLocalizations.of(context)!.resultsCongrats,
                       textAlign: TextAlign.start,
                       style: GoogleFonts.roboto(
-                        fontSize: 20,
+                        fontSize: 22,
                         color: Kcolors.mainBlack,
                         fontWeight: FontWeight.bold,
                       )
@@ -90,7 +90,7 @@ class _IntroResultsState extends State<IntroResults> {
                       AppLocalizations.of(context)!.resultsCongratsSub,
                       textAlign: TextAlign.start,
                       style: GoogleFonts.roboto(
-                        fontSize: 18,
+                        fontSize: 20,
                         height: 1.2,
                         color: Kcolors.mainBlack,
                       )

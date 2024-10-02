@@ -11,6 +11,7 @@ import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:kisukari_mobile_app/src/introduction/thirdscreen/widgets/alcoholandcigarette.dart';
 import 'package:kisukari_mobile_app/src/introduction/thirdscreen/widgets/medicationoptions.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:kisukari_mobile_app/src/introduction/thirdscreen/widgets/excerciselevel.dart';
 
 class ThirdDiabeticmedications extends StatelessWidget {
   const ThirdDiabeticmedications({super.key});
@@ -24,10 +25,10 @@ class ThirdDiabeticmedications extends StatelessWidget {
         scrolledUnderElevation: 0.0,
         elevation: 0.0,
         leading: const CustomBackButton(),
+        centerTitle: true,
         title: 
           SizedBox(
             height: 22,
-            width: MediaQuery.of(context).size.width * 0.65,
             child:
             Image.asset(
               Kimages.logoTitle,
@@ -60,6 +61,9 @@ class ThirdDiabeticmedications extends StatelessWidget {
                               
                           // alcohol and cigarette
                           Alcoholandcigarette(),
+
+                          // excercise level
+                          ExcerciseLevel(),
                               
                          
                       

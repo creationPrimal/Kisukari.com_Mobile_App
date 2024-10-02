@@ -80,7 +80,7 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 20, bottom: 20),
+      margin: const EdgeInsets.only(top: 20, bottom: 10),
       child: 
       Column(
         children: [
@@ -91,7 +91,7 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
               AppLocalizations.of(context)!.introsubstancestitle,
               textAlign: TextAlign.start,
               style: GoogleFonts.roboto(
-                fontSize: 20,
+                fontSize: 22,
                 height: 1.2,
                 color: Kcolors.mainBlack,
                 fontWeight: FontWeight.bold,
@@ -126,7 +126,7 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
                       style: GoogleFonts.roboto(
                         color: _yesBtnTitle,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 20,
                       )
                       )
                     )
@@ -152,7 +152,7 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
                       style: GoogleFonts.roboto(
                         color: _noBtnTitle,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 20,
                       )
                       )
                     )
@@ -174,7 +174,7 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
                       AppLocalizations.of(context)!.substancesselecttitle,
                       textAlign: TextAlign.start,
                       style: GoogleFonts.roboto(
-                        fontSize: 20,
+                        fontSize: 22,
                         height: 1.2,
                         color: Kcolors.mainBlack,
                         fontWeight: FontWeight.bold,
@@ -221,8 +221,9 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
                                   child: Text(AppLocalizations.of(context)!.substanceschoiceone,
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.roboto(
-                                    fontSize: 15,
+                                    fontSize: 19,
                                     height: 1.2,
+                                    fontWeight: FontWeight.w500,
                                     color: _cigaretteispickedtitle
                                   )
                                   ),
@@ -264,7 +265,9 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
                                   child: Text(AppLocalizations.of(context)!.substanceschoicetwo,
                                   textAlign: TextAlign.center,
                                   style: GoogleFonts.roboto(
-                                    fontSize: 15,
+                                    fontSize: 19,
+                                    height: 1.2,
+                                    fontWeight: FontWeight.w500,
                                     color: _alcoholispickedtitle
                                   )
                                   ),
@@ -279,7 +282,7 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
                   ),
 
                   Container(
-                    margin: const EdgeInsets.only(top: 15, bottom: 20),
+                    margin: const EdgeInsets.only(top: 15, bottom: 0),
                     width: MediaQuery.of(context).size.width,
                     child: 
                     Row(
@@ -295,8 +298,9 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
 
                                 Text(AppLocalizations.of(context)!.cigarateschoicestitle,
                                 style: GoogleFonts.roboto(
-                                  fontSize: 17,
+                                  fontSize: 20,
                                   height: 1.2,
+                                  fontWeight: FontWeight.w700,
                                   color: Kcolors.mainBlack,
                                 )
                                 ),
@@ -354,8 +358,9 @@ class _AlcoholandcigaretteState extends State<Alcoholandcigarette> {
                             
                                 Text(AppLocalizations.of(context)!.alcoholchoicetitle,
                                 style: GoogleFonts.roboto(
-                                  fontSize: 17,
+                                  fontSize: 20,
                                   height: 1.2,
+                                  fontWeight: FontWeight.w700,
                                   color: Kcolors.mainBlack,
                                 )
                                 ),

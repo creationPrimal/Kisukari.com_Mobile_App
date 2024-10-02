@@ -123,6 +123,8 @@ class Kicons {
   static String quizicon = '${iconsRoute}quizicon.jpg';
   static String readicon = '${iconsRoute}readicon.jpg';
   static String learnmainicon = '${iconsRoute}learnmainicon.jpg';
+  static String waterglassicon = '${iconsRoute}waterglassicon.png';
+  static String bedicon = '${iconsRoute}bedicon.jpg';
  
  
 

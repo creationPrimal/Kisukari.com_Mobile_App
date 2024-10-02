@@ -130,10 +130,10 @@ class _FirstIntroDialogState extends State<FirstIntroDialog> {
         backgroundColor: Kcolors.mainWhite,
         scrolledUnderElevation: 0.0,
         elevation: 0.0,
+        centerTitle: true,
         title: 
           SizedBox(
             height: 22,
-            width: MediaQuery.of(context).size.width,
             child:
             Image.asset(
               Kimages.logo,
@@ -584,7 +584,7 @@ class _FirstIntroDialogState extends State<FirstIntroDialog> {
 
                                    Container(
                                     width: MediaQuery.of(context).size.width,
-                                    margin: const EdgeInsets.only(top: 40, bottom: 30),
+                                    margin: const EdgeInsets.only(top: 20, bottom: 30),
                                      child: GestureDetector(
                                       onTap: () {
                                         if (_formKey.currentState!.validate()) {

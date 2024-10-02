@@ -12,6 +12,7 @@ import 'package:kisukari_mobile_app/constants/kimages.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:kisukari_mobile_app/constants/routes.dart';
 import 'package:kisukari_mobile_app/src/introduction/fourthscreen/widgets/otherdiseasesqstn.dart';
+import 'package:kisukari_mobile_app/src/introduction/fourthscreen/widgets/wakeuptime.dart';
 
 class FourthOtherdiseases extends StatelessWidget {
   const FourthOtherdiseases({super.key});
@@ -25,10 +26,10 @@ class FourthOtherdiseases extends StatelessWidget {
         scrolledUnderElevation: 0.0,
         elevation: 0.0,
         leading: const CustomBackButton(),
+        centerTitle: true,
         title: 
           SizedBox(
             height: 22,
-            width: MediaQuery.of(context).size.width * 0.65,
             child:
             Image.asset(
               Kimages.logoTitle,
@@ -50,9 +51,20 @@ class FourthOtherdiseases extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                   
-                      // yes or no qstn
-                      const Otherdiseasesqstn(),
-                      // alcohol and cigarette
+                      
+                      const Column(
+                        children: [
+                          // yes or no qstn
+                          // alcohol and cigarette
+                          Otherdiseasesqstn(),
+
+                          // wake up time
+                          WakeUpTime(),
+                        ],
+                      ),
+                      
+
+                      
                       
                           
                       Container(

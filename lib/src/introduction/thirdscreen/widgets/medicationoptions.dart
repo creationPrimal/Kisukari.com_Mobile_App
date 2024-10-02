@@ -50,7 +50,8 @@ class _MedicationOptionsState extends State<MedicationOptions> {
               AppLocalizations.of(context)!.introTypeofmedicationtitle,
               textAlign: TextAlign.start,
               style: GoogleFonts.roboto(
-                fontSize: 20,
+                fontSize: 22,
+                height: 1.2,
                 color: Kcolors.mainBlack,
                 fontWeight: FontWeight.bold,
               )

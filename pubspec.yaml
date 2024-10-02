@@ -204,6 +204,8 @@ flutter:
     - assets/app_icons/quizicon.jpg
     - assets/app_icons/readicon.jpg
     - assets/app_icons/learnmainicon.jpg
+    - assets/app_icons/waterglassicon.png
+    - assets/app_icons/bedicon.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

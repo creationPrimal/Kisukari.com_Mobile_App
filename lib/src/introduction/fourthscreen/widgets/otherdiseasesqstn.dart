@@ -124,7 +124,7 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
                   AppLocalizations.of(context)!.doyouhaveotherdiseases,
                   textAlign: TextAlign.start,
                   style: GoogleFonts.roboto(
-                    fontSize: 20,
+                    fontSize: 22,
                     color: Kcolors.mainBlack,
                     fontWeight: FontWeight.bold,
                   )
@@ -133,7 +133,8 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
                   AppLocalizations.of(context)!.infousagesubtitle,
                   textAlign: TextAlign.start,
                   style: GoogleFonts.roboto(
-                    fontSize: 18,
+                    fontSize: 20,
+                    height: 1.2,
                     color: Kcolors.mainBlack,
                   )
                 ),
@@ -168,7 +169,7 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
                       style: GoogleFonts.roboto(
                         color: _yesBtnTitle,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 20,
                       )
                       )
                     )
@@ -194,7 +195,7 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
                       style: GoogleFonts.roboto(
                         color: _noBtnTitle,
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 20,
                       )
                       )
                     )
@@ -218,7 +219,8 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
                       AppLocalizations.of(context)!.selectamongthesediseases,
                       textAlign: TextAlign.start,
                       style: GoogleFonts.roboto(
-                        fontSize: 20,
+                        fontSize: 22,
+                        height: 1.2,
                         color: Kcolors.mainBlack,
                         fontWeight: FontWeight.bold,
                       )
@@ -307,8 +309,8 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
                                     Text(AppLocalizations.of(context)!.doyouhaveotherdiseasestwo,
                                     textAlign: TextAlign.start,
                                       style: GoogleFonts.roboto(
-                                        fontSize: 20,
-                                        height: 1,
+                                        fontSize: 22,
+                                        height: 1.2,
                                         color: Kcolors.mainBlack,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -317,7 +319,7 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
                                       AppLocalizations.of(context)!.doyouhaveotherdiseasestwosubtitle,
                                       textAlign: TextAlign.start,
                                       style: GoogleFonts.roboto(
-                                        fontSize: 15,
+                                        fontSize: 18,
                                         color: Kcolors.darkBlue,
                                         fontWeight: FontWeight.bold,
                                       )
@@ -413,8 +415,8 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
 
                               if(newDiseasesBtn) 
                                 Container(
-                                  height: 30,
-                                  width: 180,
+                                  height: 35,
+                                  width: 200,
                                   margin: const EdgeInsets.only(top: 12),
                                   child: ElevatedButton(
                                     onPressed: () {
@@ -429,7 +431,7 @@ class _OtherdiseasesqstnState extends State<Otherdiseasesqstn> {
                                     child: Text(AppLocalizations.of(context)!.addDisease,
                                     style: GoogleFonts.roboto(
                                       color: Kcolors.mainWhite,
-                                      fontSize: 16,
+                                      fontSize: 19,
                                     )
                                     )
                                   )

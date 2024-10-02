@@ -31,10 +31,10 @@ class _SecondScreenTypesState extends State<SecondScreenTypes> {
         scrolledUnderElevation: 0.0,
         elevation: 0.0,
         leading: const CustomBackButton(),
+        centerTitle: true,
         title: 
           SizedBox(
             height: 22,
-            width: MediaQuery.of(context).size.width * 0.65,
             child:
             Image.asset(
               Kimages.logoTitle,
@@ -47,90 +47,85 @@ class _SecondScreenTypesState extends State<SecondScreenTypes> {
         builder: (context, constraints) {
           return SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: constraints.maxHeight,
-              ),
-              child: IntrinsicHeight(
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.all(15),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      children: [
-                    
-                        // checklist title for diabetes types
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          child: Text(
-                            AppLocalizations.of(context)!.selectDiabetesType,
-                            textAlign: TextAlign.start,
-                            style: GoogleFonts.roboto(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            )
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.all(15),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                
+                    // checklist title for diabetes types
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Text(
+                        AppLocalizations.of(context)!.selectDiabetesType,
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.roboto(
+                          fontSize: 22,
+                          height: 1.2,
+                          fontWeight: FontWeight.bold,
+                        )
+                      ),
+                    ),
+                
+                    // checklist for diabetes types widget
+                    const DiabetestypesWidget(),
+                
+                    // diabetic duration of a patient
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: const EdgeInsets.symmetric(vertical: 15),
+                      child: Text(
+                        AppLocalizations.of(context)!.selectDiabeticDuration,
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.roboto(
+                          fontSize: 22,
+                          height: 1.2,
+                          fontWeight: FontWeight.bold,
+                        )
+                      ),
+                    ),
+                
+                    const DiabeticDurationWidget(),
+                
+                     Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: const EdgeInsets.only(top: 20, bottom: 30),
+                        child: GestureDetector(
+                        onTap: () {
+                          if (_formKey.currentState!.validate()) {
+                                      // Process data
+                          }
+                        
+                          Navigator.pushNamed(context, thirdintrodialog);
+                        },
+                        child: Container(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width * 0.85,
+                          margin: const EdgeInsets.only(top: 5),
+                          decoration: BoxDecoration(
+                            color: Kcolors.mainRed,
+                            borderRadius: BorderRadius.circular(50)
                           ),
-                        ),
-                    
-                        // checklist for diabetes types widget
-                        const DiabetestypesWidget(),
-                    
-                        // diabetic duration of a patient
-                        Container(
-                          width: MediaQuery.of(context).size.width,
-                          margin: const EdgeInsets.symmetric(vertical: 15),
-                          child: Text(
-                            AppLocalizations.of(context)!.selectDiabeticDuration,
-                            textAlign: TextAlign.start,
-                            style: GoogleFonts.roboto(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            )
-                          ),
-                        ),
-                    
-                        const DiabeticDurationWidget(),
-                    
-                         Container(
-                          width: MediaQuery.of(context).size.width,
-                          margin: const EdgeInsets.only(top: 20, bottom: 30),
-                            child: GestureDetector(
-                            onTap: () {
-                              if (_formKey.currentState!.validate()) {
-                                          // Process data
-                              }
-                            
-                              Navigator.pushNamed(context, thirdintrodialog);
-                            },
-                            child: Container(
-                              height: 50,
-                              width: MediaQuery.of(context).size.width * 0.85,
-                              margin: const EdgeInsets.only(top: 5),
-                              decoration: BoxDecoration(
-                                color: Kcolors.mainRed,
-                                borderRadius: BorderRadius.circular(50)
-                              ),
-                              child: Center(
-                                child: Text(AppLocalizations.of(context)!.continueNext,
-                                textAlign: TextAlign.center,
-                                  style: GoogleFonts.roboto(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold,
-                                    color: Kcolors.mainWhite
-                                  )
-                                ),
+                          child: Center(
+                            child: Text(AppLocalizations.of(context)!.continueNext,
+                            textAlign: TextAlign.center,
+                              style: GoogleFonts.roboto(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Kcolors.mainWhite
                               )
                             ),
-                                                              ),
-                          ),
-                                    
-                    
-                      ]
-                    ),
-                  )
+                          )
+                        ),
+                                                          ),
+                      ),
+                                
+                
+                  ]
                 ),
-              ),
+              )
             ),
           );
         }

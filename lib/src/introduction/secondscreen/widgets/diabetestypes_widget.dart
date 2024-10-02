@@ -39,12 +39,9 @@ class _DiabetestypesWidgetState extends State<DiabetestypesWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 515,
-      child: ListView.builder(
-          itemCount: _items.length,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
+    return Column(
+      children: List.generate(
+          _items.length, (index) {
             return Theme(
               data: ThemeData(
                 splashColor: Colors.transparent,
